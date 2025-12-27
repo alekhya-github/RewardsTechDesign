@@ -1,7 +1,7 @@
 <!--/*
   AEM Component: Promo Cards
-  Component Path: /apps/chase/components/promo-cards
-  Resource Type: chase/components/promo-cards
+  Component Path: /apps/Rans/components/promo-cards
+  Resource Type: Rans/components/promo-cards
   
   Dialog Fields (.content.xml):
   ==================================
@@ -14,7 +14,7 @@
           - ./linkText (textfield) - Link text
           - ./linkUrl (pathfield) - Link destination
   
-  Sling Model: chase.core.models.PromoCardsModel
+  Sling Model: Rans.core.models.PromoCardsModel
   
   Layout Notes:
   - Displays as a 2-column grid on desktop
@@ -25,7 +25,7 @@
 <!-- Promo Cards Component -->
 <section
   class="promo-cards"
-  data-sly-use.model="chase.core.models.PromoCardsModel"
+  data-sly-use.model="Rans.core.models.PromoCardsModel"
 >
   <!-- HTL: data-sly-list.card="${model.promoCards}" -->
   <div class="promo-cards__grid">
@@ -41,7 +41,7 @@
       <div class="promo-cards__content">
         <!-- HTL: data-sly-text="${card.description}" -->
         <p class="promo-cards__description">
-          Earn cash back on your next trip when you purchase through Chase
+          Earn cash back on your next trip when you purchase through Rans
           Travel.
         </p>
         <!-- Action Links -->
@@ -189,7 +189,7 @@
             </svg>
           </li>
 
-          <!-- Link 2: Visit The Shops at Chase -->
+          <!-- Link 2: Visit The Shops at Rans -->
           <li>
             <a href="#">
               <!-- Shop Icon -->
@@ -204,7 +204,7 @@
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                 <line x1="3" y1="6" x2="21" y2="6" />
               </svg>
-              Visit The Shops at Chase
+              Visit The Shops at Rans
             </a>
             <svg
               width="16"

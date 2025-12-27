@@ -1,7 +1,7 @@
 /**
  * Featured Rewards Carousel Component
  *
- * AEM ClientLib Category: chase.components.featured-rewards
+ * AEM ClientLib Category: Rans.components.featured-rewards
  * Dependencies: None (Vanilla JS)
  *
  * Features:
@@ -14,14 +14,14 @@
  * Usage in AEM:
  * - Include in component's clientlib js.txt
  * - Initialize automatically on DOMContentLoaded
- * - Can also be initialized manually: new Chase.FeaturedRewardsCarousel(element)
+ * - Can also be initialized manually: new Rans.FeaturedRewardsCarousel(element)
  */
 
 (function () {
   "use strict";
 
-  // Create Chase namespace if it doesn't exist
-  window.Chase = window.Chase || {};
+  // Create Rans namespace if it doesn't exist
+  window.Rans = window.Rans || {};
 
   /**
    * FeaturedRewardsCarousel Class
@@ -241,8 +241,8 @@
     }
   }
 
-  // Export to Chase namespace
-  Chase.FeaturedRewardsCarousel = FeaturedRewardsCarousel;
+  // Export to Rans namespace
+  Rans.FeaturedRewardsCarousel = FeaturedRewardsCarousel;
 
   /**
    * Auto-initialize carousels on DOM ready

@@ -1,7 +1,7 @@
 {
-  "name": "chase-ultimate-rewards",
+  "name": "Rans-ultimate-rewards",
   "version": "1.0.0",
-  "description": "Chase Ultimate Rewards - HTML/SCSS/JS Design Implementation",
+  "description": "Rans Ultimate Rewards - HTML/SCSS/JS Design Implementation",
   "scripts": {
     "sass": "sass assets/scss/main.scss assets/css/main.css",
     "sass:watch": "sass assets/scss/main.scss assets/css/main.css --watch",
@@ -9,7 +9,7 @@
     "build": "sass assets/scss/main.scss assets/css/main.css --style=compressed"
   },
   "keywords": [
-    "chase",
+    "Rans",
     "ultimate-rewards",
     "scss",
     "html"

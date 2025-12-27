@@ -1,7 +1,7 @@
 <!--/*
   AEM Component: Footer
-  Component Path: /apps/chase/components/footer
-  Resource Type: chase/components/footer
+  Component Path: /apps/Rans/components/footer
+  Resource Type: Rans/components/footer
   
   Dialog Fields (.content.xml):
   ==================================
@@ -11,16 +11,16 @@
       - ./linkUrl (pathfield) - Link destination URL
       - ./openInNewTab (checkbox) - Open link in new tab
   
-  Sling Model: chase.core.models.FooterModel
+  Sling Model: Rans.core.models.FooterModel
   
   Experience Fragment Notes:
   - Footer is typically managed as an Experience Fragment
-  - Path: /content/experience-fragments/chase/footer/master
+  - Path: /content/experience-fragments/Rans/footer/master
   - Use data-sly-resource for XF inclusion in page templates
 */-->
 
 <!-- Footer Component -->
-<footer class="footer" data-sly-use.model="chase.core.models.FooterModel">
+<footer class="footer" data-sly-use.model="Rans.core.models.FooterModel">
   <div class="container">
     <div class="footer__content">
       <!-- Copyright Text -->
@@ -29,7 +29,7 @@
         class="footer__copyright"
         data-sly-text="${model.copyrightText @ context='html'}"
       >
-        © 2025 JP Morgan Chase & Co.<br />JPMorgan Chase Bank, N.A. Member FDIC
+        © 2025 JP Morgan Rans & Co.<br />JPMorgan Rans Bank, N.A. Member FDIC
       </p>
 
       <!-- Footer Links -->

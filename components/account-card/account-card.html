@@ -1,20 +1,20 @@
 <!--/*
   AEM Component: Account Card
-  Component Path: /apps/chase/components/account-card
-  Resource Type: chase/components/account-card
+  Component Path: /apps/Rans/components/account-card
+  Resource Type: Rans/components/account-card
   
   Dialog Fields (.content.xml):
   ==================================
   - ./cardImage (image) - Card image upload/selection
   - ./cardImageAlt (textfield) - Card image alt text
-  - ./cardName (textfield) - Account/Card name (e.g., "Chase Freedom® (...3214)")
+  - ./cardName (textfield) - Account/Card name (e.g., "Rans Freedom® (...3214)")
   - ./availablePoints (textfield) - Available points value (e.g., "98,286")
   - ./availablePointsLabel (textfield) - Label text (Default: "Available points")
   - ./pendingPoints (textfield) - Pending points value (e.g., "653")
   - ./pendingPointsLabel (textfield) - Label text (Default: "Pending points")
   - ./showPendingInfo (checkbox) - Show info icon next to pending points
   
-  Sling Model: chase.core.models.AccountCardModel
+  Sling Model: Rans.core.models.AccountCardModel
   
   HTL/Sightly Notes:
   - Use data-sly-use for Sling Model binding
@@ -25,14 +25,14 @@
 <!-- Account Card Component -->
 <section
   class="account-card"
-  data-sly-use.model="chase.core.models.AccountCardModel"
+  data-sly-use.model="Rans.core.models.AccountCardModel"
 >
   <!-- Card Image -->
   <div class="account-card__image">
     <!-- HTL: data-sly-attribute.src="${model.cardImage}" data-sly-attribute.alt="${model.cardImageAlt}" -->
     <img
       src="assets/images/06610_Freedom_700x442.webp"
-      alt="Chase Freedom Visa Card"
+      alt="Rans Freedom Visa Card"
       data-sly-attribute.src="${model.cardImage}"
       data-sly-attribute.alt="${model.cardImageAlt}"
     />
@@ -42,7 +42,7 @@
   <div class="account-card__info">
     <!-- Card Name - HTL: data-sly-text="${model.cardName}" -->
     <h2 class="account-card__name" data-sly-text="${model.cardName}">
-      Chase Freedom® (...3214)
+      Rans Freedom® (...3214)
     </h2>
 
     <div class="account-card__points">

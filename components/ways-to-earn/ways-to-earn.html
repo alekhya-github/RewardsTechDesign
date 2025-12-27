@@ -1,7 +1,7 @@
 <!--/*
   AEM Component: Ways To Earn Points
-  Component Path: /apps/chase/components/ways-to-earn
-  Resource Type: chase/components/ways-to-earn
+  Component Path: /apps/Rans/components/ways-to-earn
+  Resource Type: Rans/components/ways-to-earn
   
   Dialog Fields (.content.xml):
   ==================================
@@ -15,7 +15,7 @@
       - ./labelText (textfield) - Item label text
       - ./detailsLink (pathfield) - Optional link to details
   
-  Sling Model: chase.core.models.WaysToEarnModel
+  Sling Model: Rans.core.models.WaysToEarnModel
   
   Layout Notes:
   - This component typically appears in a two-column layout with Ways To Use
@@ -23,7 +23,7 @@
 */-->
 
 <!-- Ways To Earn Points Component -->
-<div class="ways-earn" data-sly-use.model="chase.core.models.WaysToEarnModel">
+<div class="ways-earn" data-sly-use.model="Rans.core.models.WaysToEarnModel">
   <!-- Section Header -->
   <div class="ways-earn__header">
     <!-- HTL: data-sly-text="${model.sectionTitle @ default='Explore ways to earn points'}" -->
@@ -58,7 +58,7 @@
       >
     </li>
 
-    <!-- Item 2: 1% Every Purchase (Icon Type) -->
+    <!-- Item 2: 1% Every purchase (Icon Type) -->
     <!-- HTL: data-sly-test="${item.itemType == 'icon'}" -->
     <li class="ways-earn__item">
       <!-- Card Icon -->

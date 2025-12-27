@@ -1,7 +1,7 @@
 <!--/*
   AEM Component: Featured Rewards Carousel
-  Component Path: /apps/chase/components/featured-rewards
-  Resource Type: chase/components/featured-rewards
+  Component Path: /apps/Rans/components/featured-rewards
+  Resource Type: Rans/components/featured-rewards
   
   Dialog Fields (.content.xml):
   ==================================
@@ -18,9 +18,9 @@
   - ./showDots (checkbox) - Show navigation dots
   - ./showArrows (checkbox) - Show prev/next arrows
   
-  Sling Model: chase.core.models.FeaturedRewardsModel
+  Sling Model: Rans.core.models.FeaturedRewardsModel
   
-  ClientLib Category: chase.components.featured-rewards
+  ClientLib Category: Rans.components.featured-rewards
   
   JavaScript Requirements:
   - Carousel navigation (prev/next arrows)
@@ -32,7 +32,7 @@
 <!-- Featured Rewards Carousel Component -->
 <section
   class="featured-rewards"
-  data-sly-use.model="chase.core.models.FeaturedRewardsModel"
+  data-sly-use.model="Rans.core.models.FeaturedRewardsModel"
 >
   <!-- Section Title - HTL: data-sly-text="${model.sectionTitle @ default='Featured rewards for you'}" -->
   <h2
@@ -91,20 +91,20 @@
           </div>
         </div>
 
-        <!-- Card 2: Chase Travel -->
+        <!-- Card 2: Rans Travel -->
         <div class="featured-rewards__card">
           <div class="featured-rewards__card-image">
             <img
-              src="assets/images/MRM_ChaseTravelOffer_2025_Wave2_C.webp"
-              alt="Chase Travel Offer"
+              src="assets/images/MRM_RansTravelOffer_2025_Wave2_C.webp"
+              alt="Rans Travel Offer"
             />
             <span class="featured-rewards__card-overlay"
-              >Get $100 back on Chase Travel</span
+              >Get $100 back on Rans Travel</span
             >
           </div>
           <div class="featured-rewards__card-content">
             <p class="featured-rewards__card-description">
-              Activate your Chase Offer and get $100 back when you spend $600.
+              Activate your Rans Offer and get $100 back when you spend $600.
               Let this trip pay for your next.
             </p>
             <a href="#" class="btn btn--outline">View offer</a>
@@ -175,7 +175,7 @@
         <div class="featured-rewards__card">
           <div class="featured-rewards__card-image">
             <img
-              src="assets/images/MRM_ChaseTravelOffer_2025_Wave2_C.webp"
+              src="assets/images/MRM_RansTravelOffer_2025_Wave2_C.webp"
               alt="Partner Transfers"
             />
             <span class="featured-rewards__card-overlay"

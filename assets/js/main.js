@@ -1,5 +1,5 @@
 // ==========================================================================
-// Main JavaScript - Chase Ultimate Rewards Dashboard
+// Main JavaScript - Rans Ultimate Rewards Dashboard
 // ==========================================================================
 
 // Main App Class

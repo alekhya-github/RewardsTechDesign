@@ -1,27 +1,27 @@
 <!--/*
   AEM Component: HomePage (Parent Container)
-  Component Path: /apps/chase/components/homepage
-  Resource Type: chase/components/homepage
+  Component Path: /apps/Rans/components/homepage
+  Resource Type: Rans/components/homepage
   
   Component Structure:
   ==================================
   This is the parent container that assembles all child components
-  for the Chase Ultimate Rewards homepage.
+  for the Rans Ultimate Rewards homepage.
   
   Child Components (in order):
-  1. Header (/apps/chase/components/header)
-  2. Account Card (/apps/chase/components/account-card)
-  3. Cashback Categories (/apps/chase/components/cashback-categories)
+  1. Header (/apps/Rans/components/header)
+  2. Account Card (/apps/Rans/components/account-card)
+  3. Cashback Categories (/apps/Rans/components/cashback-categories)
   4. Earnings & Activity Grid:
-      - Earnings (/apps/chase/components/earnings)
-      - Activity (/apps/chase/components/activity)
-  5. Featured Rewards (/apps/chase/components/featured-rewards)
+      - Earnings (/apps/Rans/components/earnings)
+      - Activity (/apps/Rans/components/activity)
+  5. Featured Rewards (/apps/Rans/components/featured-rewards)
   6. Ways Section Grid:
-      - Ways To Use (/apps/chase/components/ways-to-use)
-      - Ways To Earn (/apps/chase/components/ways-to-earn)
-  7. Promo Cards (/apps/chase/components/promo-cards)
-  8. Need Help (/apps/chase/components/need-help)
-  9. Footer (/apps/chase/components/footer)
+      - Ways To Use (/apps/Rans/components/ways-to-use)
+      - Ways To Earn (/apps/Rans/components/ways-to-earn)
+  7. Promo Cards (/apps/Rans/components/promo-cards)
+  8. Need Help (/apps/Rans/components/need-help)
+  9. Footer (/apps/Rans/components/footer)
   
   Dialog Fields (.content.xml):
   ==================================
@@ -34,26 +34,26 @@
   - Header/Footer typically managed via Experience Fragments
   
   Page Template:
-  - Template: /conf/chase/settings/wcm/templates/homepage-template
+  - Template: /conf/Rans/settings/wcm/templates/homepage-template
   - Allowed Components: Define in template policies
 */-->
 
 <!DOCTYPE html>
-<html lang="en" data-sly-use.model="chase.core.models.HomePageModel">
+<html lang="en" data-sly-use.model="Rans.core.models.HomePageModel">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- HTL: data-sly-text="${model.pageDescription}" -->
     <meta
       name="description"
-      content="Chase Ultimate Rewards - Manage your rewards, redeem points, and explore ways to earn."
+      content="Rans Ultimate Rewards - Manage your rewards, redeem points, and explore ways to earn."
       data-sly-attribute.content="${model.pageDescription}"
     />
     <!-- HTL: data-sly-text="${model.pageTitle}" -->
     <title
-      data-sly-text="${model.pageTitle @ default='Ultimate Rewards® | Chase'}"
+      data-sly-text="${model.pageTitle @ default='Ultimate Rewards® | Rans'}"
     >
-      Ultimate Rewards® | Chase
+      Ultimate Rewards® | Rans
     </title>
 
     <!-- Favicon -->
@@ -69,16 +69,16 @@
 
     <!-- Main Stylesheet -->
     <!-- AEM: Replace with ClientLib include -->
-    <!-- HTL: <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.css @ categories='chase.main'}" /> -->
+    <!-- HTL: <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.css @ categories='Rans.main'}" /> -->
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
     <!-- ========================================
        HEADER COMPONENT
-       AEM: data-sly-resource="${'header' @ resourceType='chase/components/header'}"
+       AEM: data-sly-resource="${'header' @ resourceType='Rans/components/header'}"
        Or via Experience Fragment:
        data-sly-resource="${'header' @ resourceType='wcm/foundation/components/responsivegrid', 
-         path='/content/experience-fragments/chase/header/master'}"
+         path='/content/experience-fragments/Rans/header/master'}"
        ======================================== -->
     <!-- @include: ../header/header.html -->
     <header class="header">
@@ -93,13 +93,13 @@
       <div class="container">
         <!-- ========================================
            ACCOUNT CARD COMPONENT
-           AEM: data-sly-resource="${'account-card' @ resourceType='chase/components/account-card'}"
+           AEM: data-sly-resource="${'account-card' @ resourceType='Rans/components/account-card'}"
            ======================================== -->
         <!-- @include: ../account-card/account-card.html -->
 
         <!-- ========================================
            CASHBACK CATEGORIES COMPONENT
-           AEM: data-sly-resource="${'cashback-categories' @ resourceType='chase/components/cashback-categories'}"
+           AEM: data-sly-resource="${'cashback-categories' @ resourceType='Rans/components/cashback-categories'}"
            ======================================== -->
         <!-- @include: ../cashback-categories/cashback-categories.html -->
 
@@ -110,18 +110,18 @@
         <section class="earnings-activity">
           <div class="earnings-activity__grid">
             <!-- EARNINGS COMPONENT -->
-            <!-- AEM: data-sly-resource="${'earnings' @ resourceType='chase/components/earnings'}" -->
+            <!-- AEM: data-sly-resource="${'earnings' @ resourceType='Rans/components/earnings'}" -->
             <!-- @include: ../earnings/earnings.html -->
 
             <!-- ACTIVITY COMPONENT -->
-            <!-- AEM: data-sly-resource="${'activity' @ resourceType='chase/components/activity'}" -->
+            <!-- AEM: data-sly-resource="${'activity' @ resourceType='Rans/components/activity'}" -->
             <!-- @include: ../activity/activity.html -->
           </div>
         </section>
 
         <!-- ========================================
            FEATURED REWARDS CAROUSEL COMPONENT
-           AEM: data-sly-resource="${'featured-rewards' @ resourceType='chase/components/featured-rewards'}"
+           AEM: data-sly-resource="${'featured-rewards' @ resourceType='Rans/components/featured-rewards'}"
            ======================================== -->
         <!-- @include: ../featured-rewards/featured-rewards.html -->
 
@@ -132,24 +132,24 @@
         <section class="ways-section">
           <div class="ways-section__grid">
             <!-- WAYS TO USE COMPONENT -->
-            <!-- AEM: data-sly-resource="${'ways-to-use' @ resourceType='chase/components/ways-to-use'}" -->
+            <!-- AEM: data-sly-resource="${'ways-to-use' @ resourceType='Rans/components/ways-to-use'}" -->
             <!-- @include: ../ways-to-use/ways-to-use.html -->
 
             <!-- WAYS TO EARN COMPONENT -->
-            <!-- AEM: data-sly-resource="${'ways-to-earn' @ resourceType='chase/components/ways-to-earn'}" -->
+            <!-- AEM: data-sly-resource="${'ways-to-earn' @ resourceType='Rans/components/ways-to-earn'}" -->
             <!-- @include: ../ways-to-earn/ways-to-earn.html -->
           </div>
         </section>
 
         <!-- ========================================
            PROMO CARDS COMPONENT
-           AEM: data-sly-resource="${'promo-cards' @ resourceType='chase/components/promo-cards'}"
+           AEM: data-sly-resource="${'promo-cards' @ resourceType='Rans/components/promo-cards'}"
            ======================================== -->
         <!-- @include: ../promo-cards/promo-cards.html -->
 
         <!-- ========================================
            NEED HELP COMPONENT
-           AEM: data-sly-resource="${'need-help' @ resourceType='chase/components/need-help'}"
+           AEM: data-sly-resource="${'need-help' @ resourceType='Rans/components/need-help'}"
            ======================================== -->
         <!-- @include: ../need-help/need-help.html -->
       </div>
@@ -157,7 +157,7 @@
 
     <!-- ========================================
        FOOTER COMPONENT
-       AEM: data-sly-resource="${'footer' @ resourceType='chase/components/footer'}"
+       AEM: data-sly-resource="${'footer' @ resourceType='Rans/components/footer'}"
        Or via Experience Fragment
        ======================================== -->
     <!-- @include: ../footer/footer.html -->
@@ -167,7 +167,7 @@
 
     <!-- JavaScript -->
     <!-- AEM: Replace with ClientLib include -->
-    <!-- HTL: <sly data-sly-call="${clientLib.js @ categories='chase.main'}" /> -->
+    <!-- HTL: <sly data-sly-call="${clientLib.js @ categories='Rans.main'}" /> -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>

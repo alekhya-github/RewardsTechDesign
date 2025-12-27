@@ -1,23 +1,23 @@
 <!--/*
   AEM Component: Recent Activity
-  Component Path: /apps/chase/components/activity
-  Resource Type: chase/components/activity
+  Component Path: /apps/Rans/components/activity
+  Resource Type: Rans/components/activity
   
   Dialog Fields (.content.xml):
   ==================================
   - ./sectionTitle (textfield) - Section title (Default: "Recent points activity")
   - ./activityItems (multifield) - List of activity items:
-      - ./merchantName (textfield) - Merchant/Transaction name
-      - ./transactionDate (datepicker) - Transaction date
+      - ./merchantName (textfield) - Merchant/transaction name
+      - ./transactionDate (datepicker) - transaction date
       - ./earnType (textfield) - Earning type (e.g., "1% earn")
       - ./pointsEarned (textfield) - Points earned (e.g., "20 pts")
-      - ./transactionAmount (textfield) - Transaction amount (e.g., "$20.00")
+      - ./transactionAmount (textfield) - transaction amount (e.g., "$20.00")
       - ./detailsLink (pathfield) - Link to transaction details
   - ./ctaText (textfield) - CTA button text (Default: "See rewards activity")
   - ./ctaLink (pathfield) - CTA button link URL
   - ./maxItemsToShow (numberfield) - Maximum items to display (Default: 3)
   
-  Sling Model: chase.core.models.RecentActivityModel
+  Sling Model: Rans.core.models.RecentActivityModel
   
   Note: This component typically works with the Earnings component
   in a two-column grid layout (earnings-activity__grid)
@@ -26,7 +26,7 @@
 <!-- Recent Activity Component -->
 <div
   class="recent-activity"
-  data-sly-use.model="chase.core.models.RecentActivityModel"
+  data-sly-use.model="Rans.core.models.RecentActivityModel"
 >
   <!-- Section Title - HTL: data-sly-text="${model.sectionTitle @ default='Recent points activity'}" -->
   <h3
