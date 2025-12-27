@@ -1,0 +1,129 @@
+<!--/*
+  AEM Component: Recent Activity
+  Component Path: /apps/chase/components/activity
+  Resource Type: chase/components/activity
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./sectionTitle (textfield) - Section title (Default: "Recent points activity")
+  - ./activityItems (multifield) - List of activity items:
+      - ./merchantName (textfield) - Merchant/Transaction name
+      - ./transactionDate (datepicker) - Transaction date
+      - ./earnType (textfield) - Earning type (e.g., "1% earn")
+      - ./pointsEarned (textfield) - Points earned (e.g., "20 pts")
+      - ./transactionAmount (textfield) - Transaction amount (e.g., "$20.00")
+      - ./detailsLink (pathfield) - Link to transaction details
+  - ./ctaText (textfield) - CTA button text (Default: "See rewards activity")
+  - ./ctaLink (pathfield) - CTA button link URL
+  - ./maxItemsToShow (numberfield) - Maximum items to display (Default: 3)
+  
+  Sling Model: chase.core.models.RecentActivityModel
+  
+  Note: This component typically works with the Earnings component
+  in a two-column grid layout (earnings-activity__grid)
+*/-->
+
+<!-- Recent Activity Component -->
+<div
+  class="recent-activity"
+  data-sly-use.model="chase.core.models.RecentActivityModel"
+>
+  <!-- Section Title - HTL: data-sly-text="${model.sectionTitle @ default='Recent points activity'}" -->
+  <h3
+    class="recent-activity__title"
+    data-sly-text="${model.sectionTitle @ default='Recent points activity'}"
+  >
+    Recent points activity
+  </h3>
+
+  <!-- Activity List -->
+  <!-- HTL: data-sly-list.item="${model.activityItems}" -->
+  <ul class="recent-activity__list">
+    <!-- Activity Item 1 -->
+    <li class="recent-activity__item">
+      <div class="recent-activity__info">
+        <!-- HTL: data-sly-text="${item.merchantName}" -->
+        <span class="recent-activity__merchant">PROPERTYREC.COM</span>
+        <!-- HTL: data-sly-text="${item.transactionDate @ format='MMM dd, yyyy'}" -->
+        <span class="recent-activity__date">Dec 22, 2025</span>
+        <!-- HTL: data-sly-text="${item.earnType}" -->
+        <span class="recent-activity__type">1% earn</span>
+      </div>
+      <div class="recent-activity__points">
+        <!-- HTL: data-sly-text="${item.pointsEarned}" -->
+        <span class="recent-activity__pts">20 pts</span>
+        <!-- HTL: data-sly-text="${item.transactionAmount}" -->
+        <span class="recent-activity__amount">$20.00</span>
+      </div>
+      <!-- Arrow Icon - HTL: data-sly-attribute.href="${item.detailsLink}" -->
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </li>
+
+    <!-- Activity Item 2 -->
+    <li class="recent-activity__item">
+      <div class="recent-activity__info">
+        <span class="recent-activity__merchant">KOHINOOR HALAL MEAT & GR</span>
+        <span class="recent-activity__date">Dec 21, 2025</span>
+        <span class="recent-activity__type">1% earn</span>
+      </div>
+      <div class="recent-activity__points">
+        <span class="recent-activity__pts">32.73 pts</span>
+        <span class="recent-activity__amount">$32.73</span>
+      </div>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </li>
+
+    <!-- Activity Item 3 -->
+    <li class="recent-activity__item">
+      <div class="recent-activity__info">
+        <span class="recent-activity__merchant">FANDANGO *</span>
+        <span class="recent-activity__date">Dec 20, 2025</span>
+        <span class="recent-activity__type">1% earn</span>
+      </div>
+      <div class="recent-activity__points">
+        <span class="recent-activity__pts">111 pts</span>
+        <span class="recent-activity__amount">$111.00</span>
+      </div>
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </li>
+  </ul>
+
+  <!-- CTA Button -->
+  <!-- HTL: data-sly-attribute.href="${model.ctaLink}" data-sly-text="${model.ctaText}" -->
+  <a
+    href="#"
+    class="recent-activity__btn btn btn--primary"
+    data-sly-attribute.href="${model.ctaLink}"
+  >
+    <span data-sly-text="${model.ctaText @ default='See rewards activity'}"
+      >See rewards activity</span
+    >
+  </a>
+</div>

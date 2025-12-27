@@ -1,0 +1,115 @@
+<!--/*
+  AEM Component: Ways To Earn Points
+  Component Path: /apps/chase/components/ways-to-earn
+  Resource Type: chase/components/ways-to-earn
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./sectionTitle (textfield) - Section title (Default: "Explore ways to earn points")
+  - ./seeWaysLink (pathfield) - "See ways to earn" link URL
+  - ./seeWaysText (textfield) - Link text (Default: "See ways to earn >")
+  - ./earnItems (multifield) - List of earning options:
+      - ./itemType (dropdown: badge/icon) - Item display type
+      - ./badgeText (textfield) - Badge text (e.g., "5%") - if itemType is badge
+      - ./iconType (dropdown) - Predefined icon selection - if itemType is icon
+      - ./labelText (textfield) - Item label text
+      - ./detailsLink (pathfield) - Optional link to details
+  
+  Sling Model: chase.core.models.WaysToEarnModel
+  
+  Layout Notes:
+  - This component typically appears in a two-column layout with Ways To Use
+  - Items displayed as a vertical list
+*/-->
+
+<!-- Ways To Earn Points Component -->
+<div class="ways-earn" data-sly-use.model="chase.core.models.WaysToEarnModel">
+  <!-- Section Header -->
+  <div class="ways-earn__header">
+    <!-- HTL: data-sly-text="${model.sectionTitle @ default='Explore ways to earn points'}" -->
+    <h2
+      class="ways-earn__title"
+      data-sly-text="${model.sectionTitle @ default='Explore ways to earn points'}"
+    >
+      Explore ways to earn points
+    </h2>
+    <!-- HTL: data-sly-attribute.href="${model.seeWaysLink}" data-sly-text="${model.seeWaysText}" -->
+    <a
+      href="#"
+      class="ways-earn__link"
+      data-sly-attribute.href="${model.seeWaysLink}"
+    >
+      <span data-sly-text="${model.seeWaysText @ default='See ways to earn >'}"
+        >See ways to earn &gt;</span
+      >
+    </a>
+  </div>
+
+  <!-- Earn Options List -->
+  <!-- HTL: data-sly-list.item="${model.earnItems}" -->
+  <ul class="ways-earn__list">
+    <!-- Item 1: 5% Quarterly Bonus (Badge Type) -->
+    <!-- HTL: data-sly-test="${item.itemType == 'badge'}" -->
+    <li class="ways-earn__item">
+      <span class="ways-earn__badge">5%</span>
+      <!-- HTL: data-sly-text="${item.labelText}" -->
+      <span class="ways-earn__text"
+        >5% cash back on quarterly bonus categories</span
+      >
+    </li>
+
+    <!-- Item 2: 1% Every Purchase (Icon Type) -->
+    <!-- HTL: data-sly-test="${item.itemType == 'icon'}" -->
+    <li class="ways-earn__item">
+      <!-- Card Icon -->
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#0066b2"
+        stroke-width="2"
+      >
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+      </svg>
+      <span class="ways-earn__text">1% cash back on every purchase</span>
+    </li>
+
+    <!-- Item 3: Refer Friends (Icon Type) -->
+    <li class="ways-earn__item">
+      <!-- Referral Icon -->
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#0066b2"
+        stroke-width="2"
+      >
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+      <span class="ways-earn__text">Refer friends and earn cash back</span>
+    </li>
+
+    <!-- Item 4: Shop and Earn (Icon Type) -->
+    <li class="ways-earn__item">
+      <!-- Shopping Bag Icon -->
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#0066b2"
+        stroke-width="2"
+      >
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
+      </svg>
+      <span class="ways-earn__text">1-15% cash back at Shop and Earn</span>
+    </li>
+  </ul>
+</div>

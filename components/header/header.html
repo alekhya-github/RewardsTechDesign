@@ -1,0 +1,177 @@
+<!--/*
+  AEM Component: Header
+  Component Path: /apps/chase/components/header
+  Resource Type: chase/components/header
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./backLinkText (textfield) - Back link label text (Default: "Account")
+  - ./backLinkUrl (pathfield) - Back link destination URL
+  - ./signOutText (textfield) - Sign out link text (Default: "Sign out")
+  - ./signOutUrl (pathfield) - Sign out destination URL
+  - ./brandText (textfield) - Brand name (Default: "Ultimate Rewards®")
+  - ./homeLabel (textfield) - Home tab label
+  - ./manageRewardsLabel (textfield) - Manage rewards dropdown label
+  - ./convertToCashLabel (textfield) - Convert to cash dropdown label  
+  - ./shoppingLabel (textfield) - Shopping & Experiences dropdown label
+  - ./bookTravelLabel (textfield) - Book travel link label
+  - ./chooseAccountLabel (textfield) - Choose account label
+  - ./accountNumber (textfield) - Last 4 digits of account
+  - ./availablePoints (textfield) - Available points display
+  
+  HTL/Sightly Notes:
+  - Use data-sly-use for Sling Model
+  - Use data-sly-text for dynamic text
+  - Use data-sly-attribute for dynamic attributes
+  - Use data-sly-list for navigation items multifield
+*/-->
+
+<!-- Header Component -->
+<header class="header" data-sly-use.model="chase.core.models.HeaderModel">
+  <!-- Top Blue Bar -->
+  <div class="header__top">
+    <div class="container">
+      <div class="header__top-content">
+        <!-- Back Link - HTL: data-sly-attribute.href="${model.backLinkUrl}" -->
+        <a
+          href="#"
+          class="header__back"
+          data-sly-attribute.href="${model.backLinkUrl}"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <!-- HTL: data-sly-text="${model.backLinkText @ default='Account'}" -->
+          <span data-sly-text="${model.backLinkText @ default='Account'}"
+            >Account</span
+          >
+        </a>
+
+        <!-- Chase Logo -->
+        <div class="header__logo">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M16 2L2 16L16 30L30 16L16 2Z" fill="white" />
+          </svg>
+        </div>
+
+        <!-- Sign Out Link - HTL: data-sly-attribute.href="${model.signOutUrl}" -->
+        <a
+          href="#"
+          class="header__signout"
+          data-sly-attribute.href="${model.signOutUrl}"
+        >
+          <!-- HTL: data-sly-text="${model.signOutText @ default='Sign out'}" -->
+          <span data-sly-text="${model.signOutText @ default='Sign out'}"
+            >Sign out</span
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary Navigation -->
+  <div class="header__nav">
+    <div class="container">
+      <div class="header__nav-content">
+        <!-- Brand -->
+        <div class="header__brand">
+          <!-- HTL: data-sly-text="${model.brandText @ default='Ultimate Rewards®'}" -->
+          <span
+            class="header__brand-text"
+            data-sly-text="${model.brandText @ default='Ultimate Rewards®'}"
+            >Ultimate Rewards®</span
+          >
+        </div>
+
+        <!-- Navigation Tabs -->
+        <!-- HTL: data-sly-list.navItem="${model.navigationItems}" for dynamic nav -->
+        <nav class="header__tabs">
+          <a href="#" class="header__tab header__tab--active">Home</a>
+          <a href="#" class="header__tab header__tab--dropdown">
+            Manage rewards
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <a href="#" class="header__tab header__tab--dropdown">
+            Convert to cash
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <a href="#" class="header__tab header__tab--dropdown">
+            Shopping & Experiences
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <a href="#" class="header__tab">Book travel</a>
+        </nav>
+
+        <!-- Account Selector -->
+        <div class="header__account">
+          <span class="header__account-label">Choose account</span>
+          <div class="header__account-selector">
+            <span class="header__account-card"></span>
+            <!-- HTL: data-sly-text="${model.accountNumber}" -->
+            <span
+              class="header__account-number"
+              data-sly-text="${model.accountNumber}"
+              >...3214</span
+            >
+            <!-- HTL: data-sly-text="${model.availablePoints}" -->
+            <span
+              class="header__account-points"
+              data-sly-text="${model.availablePoints}"
+              >98,286 pts</span
+            >
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,173 @@
+<!--/*
+  AEM Component: HomePage (Parent Container)
+  Component Path: /apps/chase/components/homepage
+  Resource Type: chase/components/homepage
+  
+  Component Structure:
+  ==================================
+  This is the parent container that assembles all child components
+  for the Chase Ultimate Rewards homepage.
+  
+  Child Components (in order):
+  1. Header (/apps/chase/components/header)
+  2. Account Card (/apps/chase/components/account-card)
+  3. Cashback Categories (/apps/chase/components/cashback-categories)
+  4. Earnings & Activity Grid:
+      - Earnings (/apps/chase/components/earnings)
+      - Activity (/apps/chase/components/activity)
+  5. Featured Rewards (/apps/chase/components/featured-rewards)
+  6. Ways Section Grid:
+      - Ways To Use (/apps/chase/components/ways-to-use)
+      - Ways To Earn (/apps/chase/components/ways-to-earn)
+  7. Promo Cards (/apps/chase/components/promo-cards)
+  8. Need Help (/apps/chase/components/need-help)
+  9. Footer (/apps/chase/components/footer)
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./pageTitle (textfield) - Page title for SEO
+  - ./pageDescription (textarea) - Meta description
+  
+  HTL/Sightly Notes:
+  - Use data-sly-resource for including child components
+  - Use data-sly-include for static HTML partials
+  - Header/Footer typically managed via Experience Fragments
+  
+  Page Template:
+  - Template: /conf/chase/settings/wcm/templates/homepage-template
+  - Allowed Components: Define in template policies
+*/-->
+
+<!DOCTYPE html>
+<html lang="en" data-sly-use.model="chase.core.models.HomePageModel">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- HTL: data-sly-text="${model.pageDescription}" -->
+    <meta
+      name="description"
+      content="Chase Ultimate Rewards - Manage your rewards, redeem points, and explore ways to earn."
+      data-sly-attribute.content="${model.pageDescription}"
+    />
+    <!-- HTL: data-sly-text="${model.pageTitle}" -->
+    <title
+      data-sly-text="${model.pageTitle @ default='Ultimate Rewards® | Chase'}"
+    >
+      Ultimate Rewards® | Chase
+    </title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main Stylesheet -->
+    <!-- AEM: Replace with ClientLib include -->
+    <!-- HTL: <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.css @ categories='chase.main'}" /> -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- ========================================
+       HEADER COMPONENT
+       AEM: data-sly-resource="${'header' @ resourceType='chase/components/header'}"
+       Or via Experience Fragment:
+       data-sly-resource="${'header' @ resourceType='wcm/foundation/components/responsivegrid', 
+         path='/content/experience-fragments/chase/header/master'}"
+       ======================================== -->
+    <!-- @include: ../header/header.html -->
+    <header class="header">
+      <!-- Header content included from header.html -->
+      <!-- In AEM, use data-sly-resource or Experience Fragment -->
+    </header>
+
+    <!-- ========================================
+       MAIN CONTENT AREA
+       ======================================== -->
+    <main class="main">
+      <div class="container">
+        <!-- ========================================
+           ACCOUNT CARD COMPONENT
+           AEM: data-sly-resource="${'account-card' @ resourceType='chase/components/account-card'}"
+           ======================================== -->
+        <!-- @include: ../account-card/account-card.html -->
+
+        <!-- ========================================
+           CASHBACK CATEGORIES COMPONENT
+           AEM: data-sly-resource="${'cashback-categories' @ resourceType='chase/components/cashback-categories'}"
+           ======================================== -->
+        <!-- @include: ../cashback-categories/cashback-categories.html -->
+
+        <!-- ========================================
+           EARNINGS & ACTIVITY GRID
+           Parent container for two-column layout
+           ======================================== -->
+        <section class="earnings-activity">
+          <div class="earnings-activity__grid">
+            <!-- EARNINGS COMPONENT -->
+            <!-- AEM: data-sly-resource="${'earnings' @ resourceType='chase/components/earnings'}" -->
+            <!-- @include: ../earnings/earnings.html -->
+
+            <!-- ACTIVITY COMPONENT -->
+            <!-- AEM: data-sly-resource="${'activity' @ resourceType='chase/components/activity'}" -->
+            <!-- @include: ../activity/activity.html -->
+          </div>
+        </section>
+
+        <!-- ========================================
+           FEATURED REWARDS CAROUSEL COMPONENT
+           AEM: data-sly-resource="${'featured-rewards' @ resourceType='chase/components/featured-rewards'}"
+           ======================================== -->
+        <!-- @include: ../featured-rewards/featured-rewards.html -->
+
+        <!-- ========================================
+           WAYS TO USE / EARN SECTION
+           Parent container for two-column layout
+           ======================================== -->
+        <section class="ways-section">
+          <div class="ways-section__grid">
+            <!-- WAYS TO USE COMPONENT -->
+            <!-- AEM: data-sly-resource="${'ways-to-use' @ resourceType='chase/components/ways-to-use'}" -->
+            <!-- @include: ../ways-to-use/ways-to-use.html -->
+
+            <!-- WAYS TO EARN COMPONENT -->
+            <!-- AEM: data-sly-resource="${'ways-to-earn' @ resourceType='chase/components/ways-to-earn'}" -->
+            <!-- @include: ../ways-to-earn/ways-to-earn.html -->
+          </div>
+        </section>
+
+        <!-- ========================================
+           PROMO CARDS COMPONENT
+           AEM: data-sly-resource="${'promo-cards' @ resourceType='chase/components/promo-cards'}"
+           ======================================== -->
+        <!-- @include: ../promo-cards/promo-cards.html -->
+
+        <!-- ========================================
+           NEED HELP COMPONENT
+           AEM: data-sly-resource="${'need-help' @ resourceType='chase/components/need-help'}"
+           ======================================== -->
+        <!-- @include: ../need-help/need-help.html -->
+      </div>
+    </main>
+
+    <!-- ========================================
+       FOOTER COMPONENT
+       AEM: data-sly-resource="${'footer' @ resourceType='chase/components/footer'}"
+       Or via Experience Fragment
+       ======================================== -->
+    <!-- @include: ../footer/footer.html -->
+    <footer class="footer">
+      <!-- Footer content included from footer.html -->
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- AEM: Replace with ClientLib include -->
+    <!-- HTL: <sly data-sly-call="${clientLib.js @ categories='chase.main'}" /> -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1166 @@
+// ==========================================================================
+// Main SCSS - Chase Ultimate Rewards Dashboard
+// ==========================================================================
+
+// Variables
+$color-primary: #0066b2;
+$color-primary-dark: #004c8c;
+$color-primary-light: #e6f2ff;
+$color-accent: #00a651;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-100: #f8f9fa;
+$color-gray-200: #e9ecef;
+$color-gray-300: #dee2e6;
+$color-gray-400: #ced4da;
+$color-gray-500: #6c757d;
+$color-gray-600: #495057;
+$color-gray-700: #343a40;
+$color-gray-800: #212529;
+$color-text: #333333;
+$color-text-light: #666666;
+$color-text-muted: #999999;
+$color-border: #e0e0e0;
+$color-link: #0066b2;
+
+$font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  sans-serif;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 0.75rem;
+$spacing-4: 1rem;
+$spacing-5: 1.25rem;
+$spacing-6: 1.5rem;
+$spacing-8: 2rem;
+$spacing-10: 2.5rem;
+$spacing-12: 3rem;
+
+$border-radius-sm: 4px;
+$border-radius: 8px;
+$border-radius-lg: 12px;
+
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+$transition: all 0.2s ease;
+
+// Reset & Base
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  color: $color-text;
+  background-color: $color-gray-100;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $color-link;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-4;
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-3 $spacing-5;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  border-radius: $border-radius-sm;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: $transition;
+  text-decoration: none;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-primary-dark;
+      color: $color-white;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $color-text;
+    border-color: $color-gray-400;
+
+    &:hover {
+      background-color: $color-gray-100;
+      border-color: $color-gray-500;
+      color: $color-text;
+    }
+  }
+
+  &--sm {
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-xs;
+  }
+}
+
+// ==========================================================================
+// HEADER
+// ==========================================================================
+.header {
+  &__top {
+    background-color: $color-primary;
+    padding: $spacing-3 0;
+  }
+
+  &__top-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    color: $color-white;
+    font-size: $font-size-sm;
+
+    &:hover {
+      color: $color-white;
+      opacity: 0.8;
+    }
+
+    svg {
+      stroke: currentColor;
+    }
+  }
+
+  &__logo {
+    svg path {
+      fill: $color-white;
+    }
+  }
+
+  &__signout {
+    color: $color-white;
+    font-size: $font-size-sm;
+
+    &:hover {
+      color: $color-white;
+      opacity: 0.8;
+    }
+  }
+
+  &__nav {
+    background-color: $color-white;
+    border-bottom: 1px solid $color-border;
+    padding: $spacing-3 0;
+  }
+
+  &__nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-4;
+  }
+
+  &__brand-text {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+    color: $color-text;
+    border-radius: $border-radius-sm;
+    transition: $transition;
+
+    &:hover {
+      background-color: $color-gray-100;
+      color: $color-text;
+    }
+
+    &--active {
+      background-color: $color-primary;
+      color: $color-white;
+
+      &:hover {
+        background-color: $color-primary-dark;
+        color: $color-white;
+      }
+    }
+
+    &--dropdown svg {
+      stroke: currentColor;
+    }
+  }
+
+  &__account {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+  }
+
+  &__account-label {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+  }
+
+  &__account-selector {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    padding: $spacing-2 $spacing-3;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-gray-400;
+    }
+  }
+
+  &__account-card {
+    width: 24px;
+    height: 16px;
+    background: linear-gradient(135deg, $color-primary 0%, #004080 100%);
+    border-radius: 2px;
+  }
+
+  &__account-number {
+    font-size: $font-size-sm;
+    color: $color-text;
+  }
+
+  &__account-points {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-primary;
+  }
+}
+
+// ==========================================================================
+// MAIN
+// ==========================================================================
+.main {
+  padding: $spacing-8 0;
+}
+
+// ==========================================================================
+// ACCOUNT CARD
+// ==========================================================================
+.account-card {
+  display: flex;
+  align-items: center;
+  gap: $spacing-6;
+  padding: $spacing-6;
+  background-color: $color-white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  margin-bottom: $spacing-6;
+
+  &__image {
+    flex-shrink: 0;
+
+    img {
+      width: 100px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  &__name {
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: $color-text;
+    margin-bottom: $spacing-2;
+  }
+
+  &__points {
+    display: flex;
+    align-items: flex-end;
+    gap: $spacing-8;
+  }
+
+  &__points-available,
+  &__points-pending {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__points-value {
+    font-size: $font-size-3xl;
+    font-weight: 300;
+    color: $color-text;
+    line-height: 1.2;
+  }
+
+  &__points-pending &__points-value {
+    font-size: $font-size-2xl;
+  }
+
+  &__points-label {
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+    font-size: $font-size-sm;
+    color: $color-primary;
+
+    svg {
+      stroke: $color-text-muted;
+    }
+  }
+}
+
+// ==========================================================================
+// CASHBACK CATEGORIES
+// ==========================================================================
+.cashback-categories {
+  padding: $spacing-6;
+  background-color: $color-white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  margin-bottom: $spacing-6;
+
+  &__header {
+    margin-bottom: $spacing-4;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $color-text;
+
+    svg {
+      stroke: $color-text-muted;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-6;
+    align-items: flex-start;
+  }
+
+  &__icons {
+    display: flex;
+    gap: $spacing-6;
+    flex-wrap: wrap;
+  }
+
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-2;
+    text-align: center;
+
+    img,
+    svg {
+      width: 40px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: $font-size-xs;
+      color: $color-text-light;
+      max-width: 80px;
+    }
+  }
+
+  &__details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+    min-width: 300px;
+  }
+
+  &__promo {
+    p {
+      font-size: $font-size-sm;
+      color: $color-text;
+
+      a {
+        color: $color-link;
+      }
+    }
+  }
+
+  &__amount {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-size-sm;
+
+    &-label {
+      color: $color-text-light;
+    }
+
+    &-value {
+      color: $color-text;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    font-size: $font-size-sm;
+    color: $color-accent;
+  }
+}
+
+// ==========================================================================
+// EARNINGS & ACTIVITY
+// ==========================================================================
+.earnings-activity {
+  margin-bottom: $spacing-6;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-6;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.earnings {
+  padding: $spacing-6;
+  background-color: $color-white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-1;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: $color-primary;
+
+    svg {
+      stroke: $color-text-muted;
+    }
+  }
+
+  &__total {
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: $color-text;
+  }
+
+  &__period {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-bottom: $spacing-4;
+  }
+
+  &__progress {
+    margin-bottom: $spacing-4;
+  }
+
+  &__progress-bar {
+    display: flex;
+    height: 8px;
+    background-color: $color-gray-200;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__progress-fill {
+    height: 100%;
+
+    &--unlimited {
+      background-color: $color-primary;
+    }
+
+    &--quarterly {
+      background-color: #3399cc; // Lighter shade of primary
+    }
+
+    &--other {
+      background-color: $color-gray-400;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    &--blue {
+      background-color: $color-primary;
+    }
+
+    &--gray {
+      background-color: $color-gray-400;
+    }
+  }
+
+  &__label {
+    flex: 1;
+    font-size: $font-size-sm;
+    color: $color-text;
+
+    a {
+      color: $color-link;
+    }
+  }
+
+  &__value {
+    font-size: $font-size-sm;
+    color: $color-text;
+  }
+}
+
+.recent-activity {
+  padding: $spacing-6;
+  background-color: $color-white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: $color-text;
+    margin-bottom: $spacing-4;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $spacing-4;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    padding: $spacing-4 0;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-1;
+  }
+
+  &__merchant {
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $color-text;
+  }
+
+  &__date {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__type {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__points {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-1;
+  }
+
+  &__pts {
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $color-primary;
+  }
+
+  &__amount {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  svg {
+    stroke: $color-gray-400;
+    flex-shrink: 0;
+  }
+}
+
+// ==========================================================================
+// FEATURED REWARDS
+// ==========================================================================
+.featured-rewards {
+  margin-bottom: $spacing-8;
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    color: $color-text;
+    margin-bottom: $spacing-6;
+  }
+
+  &__carousel {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    position: relative;
+  }
+
+  &__nav {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: $transition;
+    flex-shrink: 0;
+    z-index: 2;
+
+    &:hover:not(:disabled) {
+      background-color: $color-gray-100;
+      border-color: $color-gray-400;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    svg {
+      stroke: $color-gray-500;
+    }
+  }
+
+  &__viewport {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    gap: $spacing-6;
+    transition: transform 0.4s ease;
+  }
+
+  &__card {
+    flex: 0 0 calc(50% - #{$spacing-3});
+    min-width: calc(50% - #{$spacing-3});
+    background-color: $color-white;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+    overflow: hidden;
+
+    @media (max-width: 600px) {
+      flex: 0 0 100%;
+      min-width: 100%;
+    }
+  }
+
+  &__card-image {
+    position: relative;
+    height: 180px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: $spacing-4;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: $color-white;
+    font-size: $font-size-base;
+    font-weight: 500;
+  }
+
+  &__card-content {
+    padding: $spacing-5;
+  }
+
+  &__card-description {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    margin-bottom: $spacing-4;
+    line-height: 1.6;
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-2;
+    margin-top: $spacing-6;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $color-gray-300;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: $transition;
+
+    &--active {
+      background-color: $color-primary;
+    }
+
+    &:hover:not(.featured-rewards__dot--active) {
+      background-color: $color-gray-400;
+    }
+  }
+}
+
+// ==========================================================================
+// WAYS SECTION
+// ==========================================================================
+.ways-section {
+  margin-bottom: $spacing-8;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: $spacing-8;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.ways-use {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-6;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    color: $color-text;
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+    color: $color-link;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-4;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    padding: $spacing-5;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    text-align: center;
+  }
+
+  &__card-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto $spacing-4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+
+    &--cash {
+      background-color: $color-primary-light;
+
+      svg {
+        stroke: $color-primary;
+      }
+    }
+
+    &--travel {
+      background-color: $color-primary-light;
+
+      svg {
+        stroke: $color-primary;
+      }
+    }
+
+    &--gift {
+      background-color: $color-primary-light;
+
+      svg {
+        stroke: $color-primary;
+      }
+    }
+  }
+
+  &__card-title {
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: $color-text;
+    margin-bottom: $spacing-2;
+  }
+
+  &__card-description {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    margin-bottom: $spacing-4;
+    line-height: 1.5;
+  }
+}
+
+.ways-earn {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-6;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    color: $color-text;
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+    color: $color-link;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+    padding: $spacing-3 0;
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 24px;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: $font-size-xs;
+    font-weight: 600;
+    border-radius: $border-radius-sm;
+  }
+
+  &__text {
+    font-size: $font-size-sm;
+    color: $color-text;
+  }
+}
+
+// ==========================================================================
+// PROMO CARDS
+// ==========================================================================
+.promo-cards {
+  margin-bottom: $spacing-8;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-6;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background-color: $color-white;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+    overflow: hidden;
+  }
+
+  &__image {
+    height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: $spacing-5;
+  }
+
+  &__description {
+    font-size: $font-size-sm;
+    color: $color-text;
+    margin-bottom: $spacing-4;
+    line-height: 1.6;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: $spacing-3 0;
+      border-bottom: 1px solid $color-border;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: $spacing-3;
+        font-size: $font-size-sm;
+        color: $color-text;
+
+        svg {
+          stroke: $color-primary;
+        }
+
+        &:hover {
+          color: $color-link;
+        }
+      }
+
+      > svg {
+        stroke: $color-gray-400;
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// NEED HELP
+// ==========================================================================
+.need-help {
+  margin-bottom: $spacing-8;
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    color: $color-text;
+    margin-bottom: $spacing-2;
+  }
+
+  &__description {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    margin-bottom: $spacing-6;
+  }
+
+  &__links {
+    background-color: $color-white;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+
+    li {
+      border-bottom: 1px solid $color-border;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $spacing-4 $spacing-5;
+        color: $color-text;
+
+        &:hover {
+          background-color: $color-gray-100;
+        }
+
+        svg {
+          stroke: $color-gray-400;
+        }
+      }
+    }
+  }
+
+  .text-highlight {
+    color: $color-link;
+  }
+}
+
+// ==========================================================================
+// FOOTER
+// ==========================================================================
+.footer {
+  padding: $spacing-8 0;
+  background-color: $color-white;
+  border-top: 1px solid $color-border;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-4;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__copyright {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    line-height: 1.6;
+  }
+
+  &__links {
+    display: flex;
+    gap: $spacing-6;
+
+    a {
+      font-size: $font-size-sm;
+      color: $color-link;
+    }
+  }
+}
+
+// ==========================================================================
+// RESPONSIVE
+// ==========================================================================
+@media (max-width: 768px) {
+  .header__tabs {
+    display: none;
+  }
+
+  .header__account {
+    display: none;
+  }
+
+  .account-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .account-card__points {
+    flex-direction: column;
+    gap: $spacing-4;
+  }
+}

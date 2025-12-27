@@ -1,0 +1,55 @@
+// ==========================================================================
+// Ways To Earn Component Styles
+// Component Path: /apps/chase/components/ways-to-earn
+// ==========================================================================
+
+.ways-earn {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-6;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    color: $color-text;
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+    color: $color-link;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+    padding: $spacing-3 0;
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 24px;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: $font-size-xs;
+    font-weight: 600;
+    border-radius: $border-radius-sm;
+  }
+
+  &__text {
+    font-size: $font-size-sm;
+    color: $color-text;
+  }
+}

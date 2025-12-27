@@ -1,0 +1,158 @@
+// ==========================================================================
+// Header Component Styles
+// Component Path: /apps/chase/components/header
+// ==========================================================================
+
+.header {
+  &__top {
+    background-color: $color-primary;
+    padding: $spacing-3 0;
+  }
+
+  &__top-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    color: $color-white;
+    font-size: $font-size-sm;
+
+    &:hover {
+      color: $color-white;
+      opacity: 0.8;
+    }
+
+    svg {
+      stroke: currentColor;
+    }
+  }
+
+  &__logo {
+    svg path {
+      fill: $color-white;
+    }
+  }
+
+  &__signout {
+    color: $color-white;
+    font-size: $font-size-sm;
+
+    &:hover {
+      color: $color-white;
+      opacity: 0.8;
+    }
+  }
+
+  &__nav {
+    background-color: $color-white;
+    border-bottom: 1px solid $color-border;
+    padding: $spacing-3 0;
+  }
+
+  &__nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-4;
+  }
+
+  &__brand-text {
+    font-size: $font-size-lg;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+    color: $color-text;
+    border-radius: $border-radius-sm;
+    transition: $transition;
+
+    &:hover {
+      background-color: $color-gray-100;
+      color: $color-text;
+    }
+
+    &--active {
+      background-color: $color-primary;
+      color: $color-white;
+
+      &:hover {
+        background-color: $color-primary-dark;
+        color: $color-white;
+      }
+    }
+
+    &--dropdown svg {
+      stroke: currentColor;
+    }
+  }
+
+  &__account {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__account-label {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+  }
+
+  &__account-selector {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    padding: $spacing-2 $spacing-3;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-gray-400;
+    }
+  }
+
+  &__account-card {
+    width: 24px;
+    height: 16px;
+    background: linear-gradient(135deg, $color-primary 0%, #004080 100%);
+    border-radius: 2px;
+  }
+
+  &__account-number {
+    font-size: $font-size-sm;
+    color: $color-text;
+  }
+
+  &__account-points {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-primary;
+  }
+}

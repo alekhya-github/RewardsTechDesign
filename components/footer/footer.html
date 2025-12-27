@@ -1,0 +1,45 @@
+<!--/*
+  AEM Component: Footer
+  Component Path: /apps/chase/components/footer
+  Resource Type: chase/components/footer
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./copyrightText (richtext) - Copyright text with line breaks
+  - ./footerLinks (multifield) - Footer navigation links:
+      - ./linkText (textfield) - Link display text
+      - ./linkUrl (pathfield) - Link destination URL
+      - ./openInNewTab (checkbox) - Open link in new tab
+  
+  Sling Model: chase.core.models.FooterModel
+  
+  Experience Fragment Notes:
+  - Footer is typically managed as an Experience Fragment
+  - Path: /content/experience-fragments/chase/footer/master
+  - Use data-sly-resource for XF inclusion in page templates
+*/-->
+
+<!-- Footer Component -->
+<footer class="footer" data-sly-use.model="chase.core.models.FooterModel">
+  <div class="container">
+    <div class="footer__content">
+      <!-- Copyright Text -->
+      <!-- HTL: data-sly-text="${model.copyrightText @ context='html'}" for richtext with line breaks -->
+      <p
+        class="footer__copyright"
+        data-sly-text="${model.copyrightText @ context='html'}"
+      >
+        © 2025 JP Morgan Chase & Co.<br />JPMorgan Chase Bank, N.A. Member FDIC
+      </p>
+
+      <!-- Footer Links -->
+      <!-- HTL: data-sly-list.link="${model.footerLinks}" -->
+      <div class="footer__links">
+        <!-- HTL: data-sly-attribute.href="${link.linkUrl}" data-sly-text="${link.linkText}" -->
+        <!-- HTL: data-sly-attribute.target="${link.openInNewTab ? '_blank' : ''}" -->
+        <a href="#">Privacy & Security</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>

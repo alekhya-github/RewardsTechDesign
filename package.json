@@ -1,0 +1,20 @@
+{
+  "name": "chase-ultimate-rewards",
+  "version": "1.0.0",
+  "description": "Chase Ultimate Rewards - HTML/SCSS/JS Design Implementation",
+  "scripts": {
+    "sass": "sass assets/scss/main.scss assets/css/main.css",
+    "sass:watch": "sass assets/scss/main.scss assets/css/main.css --watch",
+    "sass:compressed": "sass assets/scss/main.scss assets/css/main.css --style=compressed",
+    "build": "sass assets/scss/main.scss assets/css/main.css --style=compressed"
+  },
+  "keywords": [
+    "chase",
+    "ultimate-rewards",
+    "scss",
+    "html"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {}
+}

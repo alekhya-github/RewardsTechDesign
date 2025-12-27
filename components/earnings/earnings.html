@@ -1,0 +1,109 @@
+<!--/*
+  AEM Component: Earnings
+  Component Path: /apps/chase/components/earnings
+  Resource Type: chase/components/earnings
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./sectionTitle (textfield) - Section title (Default: "Your earnings")
+  - ./showInfoIcon (checkbox) - Show info icon next to title
+  - ./totalPoints (textfield) - Total points earned (e.g., "17,553 pts")
+  - ./periodText (textfield) - Earnings period text (e.g., "Since Jan 2025 statement cycle")
+  - ./earningsItems (multifield) - List of earning categories:
+      - ./percentage (textfield) - Progress bar width percentage
+      - ./colorClass (dropdown) - Color variant (unlimited/quarterly/other)
+      - ./label (richtext) - Label text with optional links
+      - ./value (textfield) - Points value
+  
+  Sling Model: chase.core.models.EarningsModel
+  
+  CSS Classes for Progress Bar Colors:
+  - earnings__progress-fill--unlimited (blue - main earnings)
+  - earnings__progress-fill--quarterly (light blue - quarterly bonus)
+  - earnings__progress-fill--other (gray - other earnings)
+*/-->
+
+<!-- Earnings Component -->
+<div class="earnings" data-sly-use.model="chase.core.models.EarningsModel">
+  <!-- Header with Title and Total -->
+  <div class="earnings__header">
+    <h3 class="earnings__title">
+      <!-- HTL: data-sly-text="${model.sectionTitle @ default='Your earnings'}" -->
+      <span data-sly-text="${model.sectionTitle @ default='Your earnings'}"
+        >Your earnings</span
+      >
+      <!-- Info Icon - HTL: data-sly-test="${model.showInfoIcon}" -->
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        data-sly-test="${model.showInfoIcon}"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 16v-4"></path>
+        <path d="M12 8h.01"></path>
+      </svg>
+    </h3>
+    <!-- HTL: data-sly-text="${model.totalPoints}" -->
+    <span class="earnings__total" data-sly-text="${model.totalPoints}"
+      >17,553 pts</span
+    >
+  </div>
+
+  <!-- Period Text - HTL: data-sly-text="${model.periodText}" -->
+  <p class="earnings__period" data-sly-text="${model.periodText}">
+    Since Jan 2025 statement cycle
+  </p>
+
+  <!-- Progress Bar -->
+  <!-- HTL: Use data-sly-list for dynamic segments -->
+  <div class="earnings__progress">
+    <div class="earnings__progress-bar">
+      <!-- 1% Unlimited (80%) -->
+      <div
+        class="earnings__progress-fill earnings__progress-fill--unlimited"
+        style="width: 80%"
+      ></div>
+      <!-- +4% Quarterly (19%) -->
+      <div
+        class="earnings__progress-fill earnings__progress-fill--quarterly"
+        style="width: 19%"
+      ></div>
+      <!-- Other (1%) -->
+      <div
+        class="earnings__progress-fill earnings__progress-fill--other"
+        style="width: 1%"
+      ></div>
+    </div>
+  </div>
+
+  <!-- Earnings List -->
+  <!-- HTL: data-sly-list.item="${model.earningsItems}" -->
+  <ul class="earnings__list">
+    <!-- 1% Unlimited Cash Back -->
+    <li class="earnings__item">
+      <span class="earnings__dot earnings__dot--blue"></span>
+      <span class="earnings__label">
+        1% <a href="#">unlimited</a> cash back on every purchase
+      </span>
+      <span class="earnings__value">14,191 pts</span>
+    </li>
+
+    <!-- +4% Quarterly Categories -->
+    <li class="earnings__item">
+      <span class="earnings__dot earnings__dot--blue"></span>
+      <span class="earnings__label">+4% on quarterly rotating categories</span>
+      <span class="earnings__value">3,345 pts</span>
+    </li>
+
+    <!-- Other Earnings -->
+    <li class="earnings__item">
+      <span class="earnings__dot earnings__dot--gray"></span>
+      <span class="earnings__label">All other earnings</span>
+      <span class="earnings__value">17 pts</span>
+    </li>
+  </ul>
+</div>

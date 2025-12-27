@@ -1,0 +1,55 @@
+// ==========================================================================
+// Need Help Component Styles
+// Component Path: /apps/chase/components/need-help
+// ==========================================================================
+
+.need-help {
+  margin-bottom: $spacing-8;
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    color: $color-text;
+    margin-bottom: $spacing-2;
+  }
+
+  &__description {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    margin-bottom: $spacing-6;
+  }
+
+  &__links {
+    background-color: $color-white;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+
+    li {
+      border-bottom: 1px solid $color-border;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $spacing-4 $spacing-5;
+        color: $color-text;
+
+        &:hover {
+          background-color: $color-gray-100;
+        }
+
+        svg {
+          stroke: $color-gray-400;
+        }
+      }
+    }
+  }
+
+  .text-highlight {
+    color: $color-link;
+  }
+}

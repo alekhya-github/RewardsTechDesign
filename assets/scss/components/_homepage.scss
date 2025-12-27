@@ -1,0 +1,15 @@
+// ==========================================================================
+// HomePage Component Styles
+// Component Path: /apps/chase/components/homepage
+// Parent container that assembles all child components
+// ==========================================================================
+
+// Main content area
+.main {
+  padding: $spacing-8 0;
+}
+
+// Utility class for text highlighting
+.text-highlight {
+  color: $color-link;
+}

@@ -1,0 +1,86 @@
+// ==========================================================================
+// Recent Activity Component Styles
+// Component Path: /apps/chase/components/activity
+// ==========================================================================
+
+.recent-activity {
+  padding: $spacing-6;
+  background-color: $color-white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: $color-text;
+    margin-bottom: $spacing-4;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $spacing-4;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+    padding: $spacing-4 0;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-1;
+  }
+
+  &__merchant {
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $color-text;
+  }
+
+  &__date {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__type {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__points {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-1;
+  }
+
+  &__pts {
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $color-primary;
+  }
+
+  &__amount {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  svg {
+    stroke: $color-gray-400;
+    flex-shrink: 0;
+  }
+}

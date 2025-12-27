@@ -1,0 +1,129 @@
+<!--/*
+  AEM Component: Cashback Categories
+  Component Path: /apps/chase/components/cashback-categories
+  Resource Type: chase/components/cashback-categories
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./sectionTitle (textfield) - Section title (Default: "5% cash back categories")
+  - ./showInfoIcon (checkbox) - Show info icon next to title
+  - ./categories (multifield) - List of category items:
+      - ./categoryIcon (image) - Category icon image
+      - ./categoryLabel (textfield) - Category label text
+  - ./promoText (richtext) - Promotional text with dates
+  - ./learnMoreLink (pathfield) - Learn more link URL
+  - ./learnMoreText (textfield) - Learn more link text
+  - ./amountEarnedLabel (textfield) - Amount earned label
+  - ./amountEarnedValue (textfield) - Amount earned value (e.g., "$0.00/$75.00")
+  - ./isActivated (checkbox) - Whether category is activated
+  - ./activatedText (textfield) - Activated status text (Default: "Activated")
+  
+  Sling Model: chase.core.models.CashbackCategoriesModel
+*/-->
+
+<!-- Cashback Categories Component -->
+<section
+  class="cashback-categories"
+  data-sly-use.model="chase.core.models.CashbackCategoriesModel"
+>
+  <!-- Section Header -->
+  <div class="cashback-categories__header">
+    <h3 class="cashback-categories__title">
+      <!-- HTL: data-sly-text="${model.sectionTitle @ default='5% cash back categories'}" -->
+      <span
+        data-sly-text="${model.sectionTitle @ default='5% cash back categories'}"
+        >5% cash back categories</span
+      >
+      <!-- Info Icon - HTL: data-sly-test="${model.showInfoIcon}" -->
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        data-sly-test="${model.showInfoIcon}"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 16v-4"></path>
+        <path d="M12 8h.01"></path>
+      </svg>
+    </h3>
+  </div>
+
+  <div class="cashback-categories__content">
+    <!-- Category Icons -->
+    <!-- HTL: data-sly-list.category="${model.categories}" -->
+    <div class="cashback-categories__icons">
+      <!-- Category Item 1: Old Navy -->
+      <div class="cashback-categories__icon">
+        <img src="assets/images/icon_oldnavy.svg" alt="Old Navy" />
+        <span>Old Navy®</span>
+      </div>
+
+      <!-- Category Item 2: Chase Travel -->
+      <div class="cashback-categories__icon">
+        <img src="assets/images/icon_travel.svg" alt="Chase Travel" />
+        <span>Chase Travel℠</span>
+      </div>
+
+      <!-- Category Item 3: Department Stores -->
+      <div class="cashback-categories__icon">
+        <img src="assets/images/icon_dept_blue.svg" alt="Department Stores" />
+        <span>Department Stores</span>
+      </div>
+
+      <!-- Category Item 4: PayPal -->
+      <div class="cashback-categories__icon">
+        <img src="assets/images/logo_paypal.svg" alt="PayPal" />
+        <span>PayPal (for month of December only)</span>
+      </div>
+    </div>
+
+    <!-- Details Section -->
+    <div class="cashback-categories__details">
+      <!-- Promo Text - HTL: data-sly-text="${model.promoText @ context='html'}" for richtext -->
+      <div class="cashback-categories__promo">
+        <p>
+          Earn 5% cash back on bonus category purchases during Oct 01-Dec 31.
+          <!-- HTL: data-sly-attribute.href="${model.learnMoreLink}" -->
+          <a href="#" data-sly-attribute.href="${model.learnMoreLink}"
+            >Learn more</a
+          >
+          &gt;
+        </p>
+      </div>
+
+      <!-- Amount Earned -->
+      <div class="cashback-categories__amount">
+        <!-- HTL: data-sly-text="${model.amountEarnedLabel @ default='Amount earned'}" -->
+        <span
+          class="cashback-categories__amount-label"
+          data-sly-text="${model.amountEarnedLabel @ default='Amount earned'}"
+          >Amount earned</span
+        >
+        <!-- HTL: data-sly-text="${model.amountEarnedValue}" -->
+        <span
+          class="cashback-categories__amount-value"
+          data-sly-text="${model.amountEarnedValue}"
+          >$0.00/$75.00</span
+        >
+      </div>
+
+      <!-- Activation Status - HTL: data-sly-test="${model.isActivated}" -->
+      <div
+        class="cashback-categories__status"
+        data-sly-test="${model.isActivated}"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#00a651">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none" />
+        </svg>
+        <!-- HTL: data-sly-text="${model.activatedText @ default='Activated'}" -->
+        <span data-sly-text="${model.activatedText @ default='Activated'}"
+          >Activated</span
+        >
+      </div>
+    </div>
+  </div>
+</section>

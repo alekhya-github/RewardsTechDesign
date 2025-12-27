@@ -1,0 +1,105 @@
+// ==========================================================================
+// Ways To Use Component Styles
+// Component Path: /apps/chase/components/ways-to-use
+// ==========================================================================
+
+// Parent grid container (shared with Ways To Earn)
+.ways-section {
+  margin-bottom: $spacing-8;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: $spacing-8;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.ways-use {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-6;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    color: $color-text;
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+    color: $color-link;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-4;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    padding: $spacing-5;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    text-align: center;
+  }
+
+  &__card-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto $spacing-4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+
+    &--cash {
+      background-color: $color-primary-light;
+
+      svg {
+        stroke: $color-primary;
+      }
+    }
+
+    &--travel {
+      background-color: $color-primary-light;
+
+      svg {
+        stroke: $color-primary;
+      }
+    }
+
+    &--gift {
+      background-color: $color-primary-light;
+
+      svg {
+        stroke: $color-primary;
+      }
+    }
+  }
+
+  &__card-title {
+    font-size: $font-size-base;
+    font-weight: 500;
+    color: $color-text;
+    margin-bottom: $spacing-2;
+  }
+
+  &__card-description {
+    font-size: $font-size-sm;
+    color: $color-text-light;
+    margin-bottom: $spacing-4;
+    line-height: 1.5;
+  }
+}

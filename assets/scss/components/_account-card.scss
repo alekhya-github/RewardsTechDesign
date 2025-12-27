@@ -1,0 +1,78 @@
+// ==========================================================================
+// Account Card Component Styles
+// Component Path: /apps/chase/components/account-card
+// ==========================================================================
+
+.account-card {
+  display: flex;
+  align-items: center;
+  gap: $spacing-6;
+  padding: $spacing-6;
+  background-color: $color-white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  margin-bottom: $spacing-6;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__image {
+    flex-shrink: 0;
+
+    img {
+      width: 100px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  &__name {
+    font-size: $font-size-base;
+    font-weight: 400;
+    color: $color-text;
+    margin-bottom: $spacing-2;
+  }
+
+  &__points {
+    display: flex;
+    align-items: flex-end;
+    gap: $spacing-8;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: $spacing-4;
+    }
+  }
+
+  &__points-available,
+  &__points-pending {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__points-value {
+    font-size: $font-size-3xl;
+    font-weight: 300;
+    color: $color-text;
+    line-height: 1.2;
+  }
+
+  &__points-pending &__points-value {
+    font-size: $font-size-2xl;
+  }
+
+  &__points-label {
+    display: flex;
+    align-items: center;
+    gap: $spacing-1;
+    font-size: $font-size-sm;
+    color: $color-primary;
+
+    svg {
+      stroke: $color-text-muted;
+    }
+  }
+}

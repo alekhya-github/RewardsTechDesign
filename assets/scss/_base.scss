@@ -1,0 +1,367 @@
+// ==========================================================================
+// Base Styles - Reset & Foundation
+// ==========================================================================
+// Note: Variables and mixins should be imported in main.scss before this file
+// ==========================================================================
+
+// CSS Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Root
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+// Body
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  color: $color-text;
+  background-color: $color-gray-100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+}
+
+h1 {
+  font-size: $font-size-5xl;
+
+  @include breakpoint-down(md) {
+    font-size: $font-size-4xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-4xl;
+
+  @include breakpoint-down(md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-3xl;
+
+  @include breakpoint-down(md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+h4 {
+  font-size: $font-size-2xl;
+}
+
+h5 {
+  font-size: $font-size-xl;
+}
+
+h6 {
+  font-size: $font-size-lg;
+}
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-4;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Links
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+
+  @include focus-ring;
+}
+
+// Lists
+ul,
+ol {
+  list-style: none;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Buttons
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+
+  @include focus-ring;
+}
+
+// Inputs
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+
+  @include focus-ring;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+// Horizontal Rule
+hr {
+  border: none;
+  border-top: 1px solid $color-border-light;
+  margin: $spacing-6 0;
+}
+
+// Selection
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+// ==========================================================================
+// Utility Classes
+// ==========================================================================
+
+// Container
+.container {
+  @include container;
+}
+
+// Section
+.section {
+  @include section;
+}
+
+// Text Alignment
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+// Text Colors
+.text-primary {
+  color: $color-text-primary;
+}
+.text-secondary {
+  color: $color-text-secondary;
+}
+.text-muted {
+  color: $color-text-muted;
+}
+.text-white {
+  color: $color-white;
+}
+.text-accent {
+  color: $color-accent;
+}
+
+// Background Colors
+.bg-primary {
+  background-color: $color-bg-primary;
+}
+.bg-secondary {
+  background-color: $color-bg-secondary;
+}
+.bg-tertiary {
+  background-color: $color-bg-tertiary;
+}
+.bg-dark {
+  background-color: $color-primary;
+}
+
+// Display
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+.d-flex {
+  display: flex;
+}
+.d-grid {
+  display: grid;
+}
+
+// Flex Utilities
+.flex-center {
+  @include flex-center;
+}
+.flex-between {
+  @include flex-between;
+}
+.flex-column {
+  @include flex-column;
+}
+
+// Spacing Utilities
+.mt-0 {
+  margin-top: $spacing-0;
+}
+.mt-2 {
+  margin-top: $spacing-2;
+}
+.mt-4 {
+  margin-top: $spacing-4;
+}
+.mt-6 {
+  margin-top: $spacing-6;
+}
+.mt-8 {
+  margin-top: $spacing-8;
+}
+
+.mb-0 {
+  margin-bottom: $spacing-0;
+}
+.mb-2 {
+  margin-bottom: $spacing-2;
+}
+.mb-4 {
+  margin-bottom: $spacing-4;
+}
+.mb-6 {
+  margin-bottom: $spacing-6;
+}
+.mb-8 {
+  margin-bottom: $spacing-8;
+}
+
+.py-4 {
+  padding-top: $spacing-4;
+  padding-bottom: $spacing-4;
+}
+.py-6 {
+  padding-top: $spacing-6;
+  padding-bottom: $spacing-6;
+}
+.py-8 {
+  padding-top: $spacing-8;
+  padding-bottom: $spacing-8;
+}
+
+.px-4 {
+  padding-left: $spacing-4;
+  padding-right: $spacing-4;
+}
+.px-6 {
+  padding-left: $spacing-6;
+  padding-right: $spacing-6;
+}
+
+// Visibility
+.visually-hidden {
+  @include visually-hidden;
+}
+
+// Responsive Visibility
+.hide-mobile {
+  @include breakpoint-down(md) {
+    display: none !important;
+  }
+}
+
+.hide-desktop {
+  @include breakpoint-up(md) {
+    display: none !important;
+  }
+}
+
+// Button Classes
+.btn {
+  @include button-base;
+}
+
+.btn-primary {
+  @include button-primary;
+}
+
+.btn-secondary {
+  @include button-secondary;
+}
+
+.btn-accent {
+  @include button-accent;
+}
+
+.btn-sm {
+  padding: $spacing-2 $spacing-4;
+  font-size: $font-size-sm;
+}
+
+.btn-lg {
+  padding: $spacing-4 $spacing-8;
+  font-size: $font-size-lg;
+}
+
+// Card Classes
+.card {
+  @include card;
+}
+
+.card-flat {
+  @include card-flat;
+}
+
+// Link Classes
+.link {
+  @include link;
+}
+
+// Icon
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-lg {
+  width: 32px;
+  height: 32px;
+}

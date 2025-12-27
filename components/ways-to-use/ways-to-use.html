@@ -1,0 +1,92 @@
+<!--/*
+  AEM Component: Ways To Use Points
+  Component Path: /apps/chase/components/ways-to-use
+  Resource Type: chase/components/ways-to-use
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./sectionTitle (textfield) - Section title (Default: "Discover ways to use points")
+  - ./moreWaysLink (pathfield) - "More ways to use" link URL
+  - ./moreWaysText (textfield) - Link text (Default: "More ways to use >")
+  - ./usageCards (multifield) - List of usage option cards:
+      - ./cardIcon (image) - Card icon image
+      - ./cardIconAlt (textfield) - Icon alt text
+      - ./cardTitle (textfield) - Card title
+      - ./cardDescription (textarea) - Card description text
+      - ./ctaText (textfield) - CTA button text
+      - ./ctaLink (pathfield) - CTA button link
+  
+  Sling Model: chase.core.models.WaysToUseModel
+  
+  Layout Notes:
+  - This component typically appears in a two-column layout with Ways To Earn
+  - Cards are displayed in a 3-column grid on desktop
+*/-->
+
+<!-- Ways To Use Points Component -->
+<div class="ways-use" data-sly-use.model="chase.core.models.WaysToUseModel">
+  <!-- Section Header -->
+  <div class="ways-use__header">
+    <!-- HTL: data-sly-text="${model.sectionTitle @ default='Discover ways to use points'}" -->
+    <h2
+      class="ways-use__title"
+      data-sly-text="${model.sectionTitle @ default='Discover ways to use points'}"
+    >
+      Discover ways to use points
+    </h2>
+    <!-- HTL: data-sly-attribute.href="${model.moreWaysLink}" data-sly-text="${model.moreWaysText}" -->
+    <a
+      href="#"
+      class="ways-use__link"
+      data-sly-attribute.href="${model.moreWaysLink}"
+    >
+      <span data-sly-text="${model.moreWaysText @ default='More ways to use >'}"
+        >More ways to use &gt;</span
+      >
+    </a>
+  </div>
+
+  <!-- Usage Cards Grid -->
+  <!-- HTL: data-sly-list.card="${model.usageCards}" -->
+  <div class="ways-use__cards">
+    <!-- Card 1: Cash Back -->
+    <div class="ways-use__card">
+      <div class="ways-use__card-icon ways-use__card-icon--cash">
+        <!-- HTL: data-sly-attribute.src="${card.cardIcon}" data-sly-attribute.alt="${card.cardIconAlt}" -->
+        <img src="assets/images/Spot_Cash.svg" alt="Cash back" />
+      </div>
+      <!-- HTL: data-sly-text="${card.cardTitle}" -->
+      <h3 class="ways-use__card-title">Cash back</h3>
+      <!-- HTL: data-sly-text="${card.cardDescription}" -->
+      <p class="ways-use__card-description">
+        Redeem your points for a statement credit or direct deposit.
+      </p>
+      <!-- HTL: data-sly-attribute.href="${card.ctaLink}" data-sly-text="${card.ctaText}" -->
+      <a href="#" class="btn btn--outline btn--sm">Get cash back</a>
+    </div>
+
+    <!-- Card 2: Travel -->
+    <div class="ways-use__card">
+      <div class="ways-use__card-icon ways-use__card-icon--travel">
+        <img src="assets/images/Spot_Plane.svg" alt="Travel" />
+      </div>
+      <h3 class="ways-use__card-title">Travel</h3>
+      <p class="ways-use__card-description">
+        Go farther when you book travel through Chase.
+      </p>
+      <a href="#" class="btn btn--outline btn--sm">Book travel</a>
+    </div>
+
+    <!-- Card 3: Gift Cards -->
+    <div class="ways-use__card">
+      <div class="ways-use__card-icon ways-use__card-icon--gift">
+        <img src="assets/images/Spot_Giftcard.svg" alt="Gift cards" />
+      </div>
+      <h3 class="ways-use__card-title">Gift cards</h3>
+      <p class="ways-use__card-description">
+        Browse and use your points with 175+ retailers.
+      </p>
+      <a href="#" class="btn btn--outline btn--sm">Shop gift cards</a>
+    </div>
+  </div>
+</div>

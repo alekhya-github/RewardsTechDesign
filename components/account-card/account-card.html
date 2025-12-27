@@ -1,0 +1,97 @@
+<!--/*
+  AEM Component: Account Card
+  Component Path: /apps/chase/components/account-card
+  Resource Type: chase/components/account-card
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./cardImage (image) - Card image upload/selection
+  - ./cardImageAlt (textfield) - Card image alt text
+  - ./cardName (textfield) - Account/Card name (e.g., "Chase Freedom® (...3214)")
+  - ./availablePoints (textfield) - Available points value (e.g., "98,286")
+  - ./availablePointsLabel (textfield) - Label text (Default: "Available points")
+  - ./pendingPoints (textfield) - Pending points value (e.g., "653")
+  - ./pendingPointsLabel (textfield) - Label text (Default: "Pending points")
+  - ./showPendingInfo (checkbox) - Show info icon next to pending points
+  
+  Sling Model: chase.core.models.AccountCardModel
+  
+  HTL/Sightly Notes:
+  - Use data-sly-use for Sling Model binding
+  - Use data-sly-attribute.src for dynamic image source
+  - Use data-sly-test for conditional rendering
+*/-->
+
+<!-- Account Card Component -->
+<section
+  class="account-card"
+  data-sly-use.model="chase.core.models.AccountCardModel"
+>
+  <!-- Card Image -->
+  <div class="account-card__image">
+    <!-- HTL: data-sly-attribute.src="${model.cardImage}" data-sly-attribute.alt="${model.cardImageAlt}" -->
+    <img
+      src="assets/images/06610_Freedom_700x442.webp"
+      alt="Chase Freedom Visa Card"
+      data-sly-attribute.src="${model.cardImage}"
+      data-sly-attribute.alt="${model.cardImageAlt}"
+    />
+  </div>
+
+  <!-- Card Info -->
+  <div class="account-card__info">
+    <!-- Card Name - HTL: data-sly-text="${model.cardName}" -->
+    <h2 class="account-card__name" data-sly-text="${model.cardName}">
+      Chase Freedom® (...3214)
+    </h2>
+
+    <div class="account-card__points">
+      <!-- Available Points -->
+      <div class="account-card__points-available">
+        <!-- HTL: data-sly-text="${model.availablePoints}" -->
+        <span
+          class="account-card__points-value"
+          data-sly-text="${model.availablePoints}"
+          >98,286</span
+        >
+        <!-- HTL: data-sly-text="${model.availablePointsLabel @ default='Available points'}" -->
+        <span
+          class="account-card__points-label"
+          data-sly-text="${model.availablePointsLabel @ default='Available points'}"
+          >Available points</span
+        >
+      </div>
+
+      <!-- Pending Points -->
+      <div class="account-card__points-pending">
+        <!-- HTL: data-sly-text="${model.pendingPoints}" -->
+        <span
+          class="account-card__points-value"
+          data-sly-text="${model.pendingPoints}"
+          >653</span
+        >
+        <span class="account-card__points-label">
+          <!-- HTL: data-sly-text="${model.pendingPointsLabel @ default='Pending points'}" -->
+          <span
+            data-sly-text="${model.pendingPointsLabel @ default='Pending points'}"
+            >Pending points</span
+          >
+          <!-- Info Icon - HTL: data-sly-test="${model.showPendingInfo}" -->
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            data-sly-test="${model.showPendingInfo}"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 16v-4"></path>
+            <path d="M12 8h.01"></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

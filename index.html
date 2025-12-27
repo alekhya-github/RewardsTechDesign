@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chase Ultimate Rewards - Manage your rewards, redeem points, and explore ways to earn."
+    />
+    <title>Ultimate Rewards® | Chase</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- ========================================
+       HEADER - Top Blue Bar
+       ======================================== -->
+    <header class="header">
+      <div class="header__top">
+        <div class="container">
+          <div class="header__top-content">
+            <a href="#" class="header__back">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Account
+            </a>
+            <div class="header__logo">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M16 2L2 16L16 30L30 16L16 2Z" fill="white" />
+              </svg>
+            </div>
+            <a href="#" class="header__signout">Sign out</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary Navigation -->
+      <div class="header__nav">
+        <div class="container">
+          <div class="header__nav-content">
+            <div class="header__brand">
+              <span class="header__brand-text">Ultimate Rewards®</span>
+            </div>
+            <nav class="header__tabs">
+              <a href="#" class="header__tab header__tab--active">Home</a>
+              <a href="#" class="header__tab header__tab--dropdown">
+                Manage rewards
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <a href="#" class="header__tab header__tab--dropdown">
+                Convert to cash
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <a href="#" class="header__tab header__tab--dropdown">
+                Shopping & Experiences
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </a>
+              <a href="#" class="header__tab">Book travel</a>
+            </nav>
+            <div class="header__account">
+              <span class="header__account-label">Choose account</span>
+              <div class="header__account-selector">
+                <span class="header__account-card"></span>
+                <span class="header__account-number">...3214</span>
+                <span class="header__account-points">98,286 pts</span>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================
+       MAIN CONTENT
+       ======================================== -->
+    <main class="main">
+      <div class="container">
+        <!-- ========================================
+           ACCOUNT CARD SECTION
+           ======================================== -->
+        <section class="account-card">
+          <div class="account-card__image">
+            <img
+              src="assets/images/06610_Freedom_700x442.webp"
+              alt="Chase Freedom Visa Card"
+            />
+          </div>
+          <div class="account-card__info">
+            <h2 class="account-card__name">Chase Freedom® (...3214)</h2>
+            <div class="account-card__points">
+              <div class="account-card__points-available">
+                <span class="account-card__points-value">98,286</span>
+                <span class="account-card__points-label">Available points</span>
+              </div>
+              <div class="account-card__points-pending">
+                <span class="account-card__points-value">653</span>
+                <span class="account-card__points-label">
+                  Pending points
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4"></path>
+                    <path d="M12 8h.01"></path>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================
+           5% CASH BACK CATEGORIES
+           ======================================== -->
+        <section class="cashback-categories">
+          <div class="cashback-categories__header">
+            <h3 class="cashback-categories__title">
+              5% cash back categories
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+            </h3>
+          </div>
+
+          <div class="cashback-categories__content">
+            <div class="cashback-categories__icons">
+              <div class="cashback-categories__icon">
+                <img src="assets/images/icon_oldnavy.svg" alt="Old Navy" />
+                <span>Old Navy®</span>
+              </div>
+              <div class="cashback-categories__icon">
+                <img src="assets/images/icon_travel.svg" alt="Chase Travel" />
+                <span>Chase Travel℠</span>
+              </div>
+              <div class="cashback-categories__icon">
+                <img
+                  src="assets/images/icon_dept_blue.svg"
+                  alt="Department Stores"
+                />
+                <span>Department Stores</span>
+              </div>
+              <div class="cashback-categories__icon">
+                <img src="assets/images/logo_paypal.svg" alt="PayPal" />
+                <span>PayPal (for month of December only)</span>
+              </div>
+            </div>
+
+            <div class="cashback-categories__details">
+              <div class="cashback-categories__promo">
+                <p>
+                  Earn 5% cash back on bonus category purchases during Oct
+                  01-Dec 31. <a href="#">Learn more</a> &gt;
+                </p>
+              </div>
+              <div class="cashback-categories__amount">
+                <span class="cashback-categories__amount-label"
+                  >Amount earned</span
+                >
+                <span class="cashback-categories__amount-value"
+                  >$0.00/$75.00</span
+                >
+              </div>
+              <div class="cashback-categories__status">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#00a651">
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M9 12l2 2 4-4"
+                    stroke="white"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                </svg>
+                <span>Activated</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================
+           EARNINGS & RECENT ACTIVITY
+           ======================================== -->
+        <section class="earnings-activity">
+          <div class="earnings-activity__grid">
+            <!-- Your Earnings -->
+            <div class="earnings">
+              <div class="earnings__header">
+                <h3 class="earnings__title">
+                  Your earnings
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4"></path>
+                    <path d="M12 8h.01"></path>
+                  </svg>
+                </h3>
+                <span class="earnings__total">17,553 pts</span>
+              </div>
+              <p class="earnings__period">Since Jan 2025 statement cycle</p>
+
+              <div class="earnings__progress">
+                <div class="earnings__progress-bar">
+                  <div
+                    class="earnings__progress-fill earnings__progress-fill--unlimited"
+                    style="width: 80%"
+                  ></div>
+                  <div
+                    class="earnings__progress-fill earnings__progress-fill--quarterly"
+                    style="width: 19%"
+                  ></div>
+                  <div
+                    class="earnings__progress-fill earnings__progress-fill--other"
+                    style="width: 1%"
+                  ></div>
+                </div>
+              </div>
+
+              <ul class="earnings__list">
+                <li class="earnings__item">
+                  <span class="earnings__dot earnings__dot--blue"></span>
+                  <span class="earnings__label"
+                    >1% <a href="#">unlimited</a> cash back on every
+                    purchase</span
+                  >
+                  <span class="earnings__value">14,191 pts</span>
+                </li>
+                <li class="earnings__item">
+                  <span class="earnings__dot earnings__dot--blue"></span>
+                  <span class="earnings__label"
+                    >+4% on quarterly rotating categories</span
+                  >
+                  <span class="earnings__value">3,345 pts</span>
+                </li>
+                <li class="earnings__item">
+                  <span class="earnings__dot earnings__dot--gray"></span>
+                  <span class="earnings__label">All other earnings</span>
+                  <span class="earnings__value">17 pts</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Recent Points Activity -->
+            <div class="recent-activity">
+              <h3 class="recent-activity__title">Recent points activity</h3>
+
+              <ul class="recent-activity__list">
+                <li class="recent-activity__item">
+                  <div class="recent-activity__info">
+                    <span class="recent-activity__merchant"
+                      >PROPERTYREC.COM</span
+                    >
+                    <span class="recent-activity__date">Dec 22, 2025</span>
+                    <span class="recent-activity__type">1% earn</span>
+                  </div>
+                  <div class="recent-activity__points">
+                    <span class="recent-activity__pts">20 pts</span>
+                    <span class="recent-activity__amount">$20.00</span>
+                  </div>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </li>
+                <li class="recent-activity__item">
+                  <div class="recent-activity__info">
+                    <span class="recent-activity__merchant"
+                      >KOHINOOR HALAL MEAT & GR</span
+                    >
+                    <span class="recent-activity__date">Dec 21, 2025</span>
+                    <span class="recent-activity__type">1% earn</span>
+                  </div>
+                  <div class="recent-activity__points">
+                    <span class="recent-activity__pts">32.73 pts</span>
+                    <span class="recent-activity__amount">$32.73</span>
+                  </div>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </li>
+                <li class="recent-activity__item">
+                  <div class="recent-activity__info">
+                    <span class="recent-activity__merchant">FANDANGO *</span>
+                    <span class="recent-activity__date">Dec 20, 2025</span>
+                    <span class="recent-activity__type">1% earn</span>
+                  </div>
+                  <div class="recent-activity__points">
+                    <span class="recent-activity__pts">111 pts</span>
+                    <span class="recent-activity__amount">$111.00</span>
+                  </div>
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </li>
+              </ul>
+
+              <a href="#" class="recent-activity__btn btn btn--primary"
+                >See rewards activity</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================
+           FEATURED REWARDS
+           ======================================== -->
+        <section class="featured-rewards">
+          <h2 class="featured-rewards__title">Featured rewards for you</h2>
+
+          <div class="featured-rewards__carousel">
+            <button
+              class="featured-rewards__nav featured-rewards__nav--prev"
+              aria-label="Previous"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <div class="featured-rewards__viewport">
+              <div class="featured-rewards__track">
+                <!-- Card 1: Gift Cards -->
+                <div class="featured-rewards__card">
+                  <div class="featured-rewards__card-image">
+                    <img
+                      src="assets/images/MRM_Generic_Holiday_2023_GC_refrsh_C.webp"
+                      alt="Gift Cards Offer"
+                    />
+                    <span class="featured-rewards__card-overlay"
+                      >Save 10% on select gift cards</span
+                    >
+                  </div>
+                  <div class="featured-rewards__card-content">
+                    <p class="featured-rewards__card-description">
+                      Redeem for select gift cards and use 10% fewer points.
+                      Quantities are limited.
+                    </p>
+                    <a href="#" class="btn btn--outline">Shop gift cards</a>
+                  </div>
+                </div>
+
+                <!-- Card 2: Chase Travel -->
+                <div class="featured-rewards__card">
+                  <div class="featured-rewards__card-image">
+                    <img
+                      src="assets/images/MRM_ChaseTravelOffer_2025_Wave2_C.webp"
+                      alt="Chase Travel Offer"
+                    />
+                    <span class="featured-rewards__card-overlay"
+                      >Get $100 back on Chase Travel</span
+                    >
+                  </div>
+                  <div class="featured-rewards__card-content">
+                    <p class="featured-rewards__card-description">
+                      Activate your Chase Offer and get $100 back when you spend
+                      $600. Let this trip pay for your next.
+                    </p>
+                    <a href="#" class="btn btn--outline">View offer</a>
+                  </div>
+                </div>
+
+                <!-- Card 3: Dining Rewards -->
+                <div class="featured-rewards__card">
+                  <div class="featured-rewards__card-image">
+                    <img
+                      src="assets/images/MRM_DealsPage_Q12025_C.webp"
+                      alt="Dining Rewards"
+                    />
+                    <span class="featured-rewards__card-overlay"
+                      >Earn 3X points on dining</span
+                    >
+                  </div>
+                  <div class="featured-rewards__card-content">
+                    <p class="featured-rewards__card-description">
+                      Enjoy 3X points at restaurants worldwide. Dine, earn, and
+                      redeem for your next adventure.
+                    </p>
+                    <a href="#" class="btn btn--outline">Learn more</a>
+                  </div>
+                </div>
+
+                <!-- Card 4: Seasonal Shopping -->
+                <div class="featured-rewards__card">
+                  <div class="featured-rewards__card-image">
+                    <img
+                      src="assets/images/MRM_SeasonsGreetings_Nov2024_C.webp"
+                      alt="Seasonal Shopping"
+                    />
+                    <span class="featured-rewards__card-overlay"
+                      >Holiday bonus points</span
+                    >
+                  </div>
+                  <div class="featured-rewards__card-content">
+                    <p class="featured-rewards__card-description">
+                      Earn bonus points on holiday shopping at select retailers.
+                      Limited time offer.
+                    </p>
+                    <a href="#" class="btn btn--outline">Shop now</a>
+                  </div>
+                </div>
+
+                <!-- Card 5: Pay Yourself Back -->
+                <div class="featured-rewards__card">
+                  <div class="featured-rewards__card-image">
+                    <img
+                      src="assets/images/MRM_Ways_to_Use_Feb2025_C.webp"
+                      alt="Pay Yourself Back"
+                    />
+                    <span class="featured-rewards__card-overlay"
+                      >Pay Yourself Back</span
+                    >
+                  </div>
+                  <div class="featured-rewards__card-content">
+                    <p class="featured-rewards__card-description">
+                      Use your points to get statement credits on purchases
+                      you've already made.
+                    </p>
+                    <a href="#" class="btn btn--outline">Get started</a>
+                  </div>
+                </div>
+
+                <!-- Card 6: Partner Transfers -->
+                <div class="featured-rewards__card">
+                  <div class="featured-rewards__card-image">
+                    <img
+                      src="assets/images/MRM_ChaseTravelOffer_2025_Wave2_C.webp"
+                      alt="Partner Transfers"
+                    />
+                    <span class="featured-rewards__card-overlay"
+                      >Transfer to travel partners</span
+                    >
+                  </div>
+                  <div class="featured-rewards__card-content">
+                    <p class="featured-rewards__card-description">
+                      Transfer points 1:1 to leading airline and hotel loyalty
+                      programs for maximum value.
+                    </p>
+                    <a href="#" class="btn btn--outline">View partners</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="featured-rewards__nav featured-rewards__nav--next"
+              aria-label="Next"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="featured-rewards__dots">
+            <button
+              class="featured-rewards__dot featured-rewards__dot--active"
+              aria-label="Go to slide 1"
+            ></button>
+            <button
+              class="featured-rewards__dot"
+              aria-label="Go to slide 2"
+            ></button>
+            <button
+              class="featured-rewards__dot"
+              aria-label="Go to slide 3"
+            ></button>
+          </div>
+        </section>
+
+        <!-- ========================================
+           WAYS TO USE / EARN POINTS
+           ======================================== -->
+        <section class="ways-section">
+          <div class="ways-section__grid">
+            <!-- Discover Ways to Use Points -->
+            <div class="ways-use">
+              <div class="ways-use__header">
+                <h2 class="ways-use__title">Discover ways to use points</h2>
+                <a href="#" class="ways-use__link">More ways to use &gt;</a>
+              </div>
+
+              <div class="ways-use__cards">
+                <div class="ways-use__card">
+                  <div class="ways-use__card-icon ways-use__card-icon--cash">
+                    <img src="assets/images/Spot_Cash.svg" alt="Cash back" />
+                  </div>
+                  <h3 class="ways-use__card-title">Cash back</h3>
+                  <p class="ways-use__card-description">
+                    Redeem your points for a statement credit or direct deposit.
+                  </p>
+                  <a href="#" class="btn btn--outline btn--sm">Get cash back</a>
+                </div>
+
+                <div class="ways-use__card">
+                  <div class="ways-use__card-icon ways-use__card-icon--travel">
+                    <img src="assets/images/Spot_Plane.svg" alt="Travel" />
+                  </div>
+                  <h3 class="ways-use__card-title">Travel</h3>
+                  <p class="ways-use__card-description">
+                    Go farther when you book travel through Chase.
+                  </p>
+                  <a href="#" class="btn btn--outline btn--sm">Book travel</a>
+                </div>
+
+                <div class="ways-use__card">
+                  <div class="ways-use__card-icon ways-use__card-icon--gift">
+                    <img
+                      src="assets/images/Spot_Giftcard.svg"
+                      alt="Gift cards"
+                    />
+                  </div>
+                  <h3 class="ways-use__card-title">Gift cards</h3>
+                  <p class="ways-use__card-description">
+                    Browse and use your points with 175+ retailers.
+                  </p>
+                  <a href="#" class="btn btn--outline btn--sm"
+                    >Shop gift cards</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Explore Ways to Earn Points -->
+            <div class="ways-earn">
+              <div class="ways-earn__header">
+                <h2 class="ways-earn__title">Explore ways to earn points</h2>
+                <a href="#" class="ways-earn__link">See ways to earn &gt;</a>
+              </div>
+
+              <ul class="ways-earn__list">
+                <li class="ways-earn__item">
+                  <span class="ways-earn__badge">5%</span>
+                  <span class="ways-earn__text"
+                    >5% cash back on quarterly bonus categories</span
+                  >
+                </li>
+                <li class="ways-earn__item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#0066b2"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                  </svg>
+                  <span class="ways-earn__text"
+                    >1% cash back on every purchase</span
+                  >
+                </li>
+                <li class="ways-earn__item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#0066b2"
+                    stroke-width="2"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                  <span class="ways-earn__text"
+                    >Refer friends and earn cash back</span
+                  >
+                </li>
+                <li class="ways-earn__item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#0066b2"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                    />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  </svg>
+                  <span class="ways-earn__text"
+                    >1-15% cash back at Shop and Earn</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================
+           PROMO CARDS
+           ======================================== -->
+        <section class="promo-cards">
+          <div class="promo-cards__grid">
+            <!-- Travel Promo -->
+            <div class="promo-cards__card">
+              <div class="promo-cards__image">
+                <img
+                  src="assets/images/MRM_Ways_to_Use_Feb2025_C.webp"
+                  alt="Travel Promo"
+                />
+              </div>
+              <div class="promo-cards__content">
+                <p class="promo-cards__description">
+                  Earn cash back on your next trip when you purchase through
+                  Chase Travel.
+                </p>
+                <ul class="promo-cards__links">
+                  <li>
+                    <a href="#">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                        />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                      </svg>
+                      Reserve a hotel
+                    </a>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8"
+                        />
+                        <path d="M3.3 7l8.7 5 8.7-5" />
+                      </svg>
+                      Book a flight
+                    </a>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect x="1" y="3" width="15" height="13" />
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                        <circle cx="5.5" cy="18.5" r="2.5" />
+                        <circle cx="18.5" cy="18.5" r="2.5" />
+                      </svg>
+                      Rent a car
+                    </a>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Shopping Promo -->
+            <div class="promo-cards__card">
+              <div class="promo-cards__image">
+                <img
+                  src="assets/images/MRM_SeasonsGreetings_Nov2024_C.webp"
+                  alt="Shopping Promo"
+                />
+              </div>
+              <div class="promo-cards__content">
+                <p class="promo-cards__description">
+                  Check out our top ways to shop top brands. Start earning
+                  points, shopping with points and more today.
+                </p>
+                <ul class="promo-cards__links">
+                  <li>
+                    <a href="#">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M2 12h20" />
+                        <path
+                          d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                        />
+                      </svg>
+                      Explore all the ways to shop
+                    </a>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                        />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                      </svg>
+                      Visit The Shops at Chase
+                    </a>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                        />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                      </svg>
+                      Shop and earn bonus points
+                    </a>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================
+           NEED HELP SECTION
+           ======================================== -->
+        <section class="need-help">
+          <h2 class="need-help__title">Need help?</h2>
+          <p class="need-help__description">
+            For questions about your rewards program or general account
+            inquiries, please call the number on the back of your card.
+          </p>
+
+          <ul class="need-help__links">
+            <li>
+              <a href="#">
+                <span>Provide feedback</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span
+                  >Ultimate Reward<span class="text-highlight">s</span>
+                  FAQs</span
+                >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span>Rewards Program Agreement</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- ========================================
+       FOOTER
+       ======================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <p class="footer__copyright">
+            © 2025 JP Morgan Chase & Co.<br />JPMorgan Chase Bank, N.A. Member
+            FDIC
+          </p>
+          <div class="footer__links">
+            <a href="#">Privacy & Security</a>
+            <a href="#">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

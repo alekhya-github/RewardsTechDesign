@@ -1,0 +1,227 @@
+<!--/*
+  AEM Component: Featured Rewards Carousel
+  Component Path: /apps/chase/components/featured-rewards
+  Resource Type: chase/components/featured-rewards
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./sectionTitle (textfield) - Section title (Default: "Featured rewards for you")
+  - ./carouselCards (multifield) - List of carousel cards:
+      - ./cardImage (image) - Card background image
+      - ./cardImageAlt (textfield) - Image alt text
+      - ./overlayText (textfield) - Text overlay on image
+      - ./description (textarea) - Card description text
+      - ./ctaText (textfield) - CTA button text
+      - ./ctaLink (pathfield) - CTA button link
+  - ./autoplay (checkbox) - Enable autoplay
+  - ./autoplaySpeed (numberfield) - Autoplay interval in ms (Default: 5000)
+  - ./showDots (checkbox) - Show navigation dots
+  - ./showArrows (checkbox) - Show prev/next arrows
+  
+  Sling Model: chase.core.models.FeaturedRewardsModel
+  
+  ClientLib Category: chase.components.featured-rewards
+  
+  JavaScript Requirements:
+  - Carousel navigation (prev/next arrows)
+  - Dot navigation
+  - Responsive: 2 cards per page on desktop
+  - Touch/swipe support for mobile
+*/-->
+
+<!-- Featured Rewards Carousel Component -->
+<section
+  class="featured-rewards"
+  data-sly-use.model="chase.core.models.FeaturedRewardsModel"
+>
+  <!-- Section Title - HTL: data-sly-text="${model.sectionTitle @ default='Featured rewards for you'}" -->
+  <h2
+    class="featured-rewards__title"
+    data-sly-text="${model.sectionTitle @ default='Featured rewards for you'}"
+  >
+    Featured rewards for you
+  </h2>
+
+  <div class="featured-rewards__carousel">
+    <!-- Previous Arrow -->
+    <!-- HTL: data-sly-test="${model.showArrows}" -->
+    <button
+      class="featured-rewards__nav featured-rewards__nav--prev"
+      aria-label="Previous"
+      data-sly-test="${model.showArrows}"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Carousel Viewport -->
+    <div class="featured-rewards__viewport">
+      <!-- Carousel Track -->
+      <!-- HTL: data-sly-list.card="${model.carouselCards}" -->
+      <div class="featured-rewards__track">
+        <!-- Card 1: Gift Cards -->
+        <div class="featured-rewards__card">
+          <div class="featured-rewards__card-image">
+            <!-- HTL: data-sly-attribute.src="${card.cardImage}" data-sly-attribute.alt="${card.cardImageAlt}" -->
+            <img
+              src="assets/images/MRM_Generic_Holiday_2023_GC_refrsh_C.webp"
+              alt="Gift Cards Offer"
+            />
+            <!-- HTL: data-sly-text="${card.overlayText}" -->
+            <span class="featured-rewards__card-overlay"
+              >Save 10% on select gift cards</span
+            >
+          </div>
+          <div class="featured-rewards__card-content">
+            <!-- HTL: data-sly-text="${card.description}" -->
+            <p class="featured-rewards__card-description">
+              Redeem for select gift cards and use 10% fewer points. Quantities
+              are limited.
+            </p>
+            <!-- HTL: data-sly-attribute.href="${card.ctaLink}" data-sly-text="${card.ctaText}" -->
+            <a href="#" class="btn btn--outline">Shop gift cards</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Chase Travel -->
+        <div class="featured-rewards__card">
+          <div class="featured-rewards__card-image">
+            <img
+              src="assets/images/MRM_ChaseTravelOffer_2025_Wave2_C.webp"
+              alt="Chase Travel Offer"
+            />
+            <span class="featured-rewards__card-overlay"
+              >Get $100 back on Chase Travel</span
+            >
+          </div>
+          <div class="featured-rewards__card-content">
+            <p class="featured-rewards__card-description">
+              Activate your Chase Offer and get $100 back when you spend $600.
+              Let this trip pay for your next.
+            </p>
+            <a href="#" class="btn btn--outline">View offer</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Dining Rewards -->
+        <div class="featured-rewards__card">
+          <div class="featured-rewards__card-image">
+            <img
+              src="assets/images/MRM_DealsPage_Q12025_C.webp"
+              alt="Dining Rewards"
+            />
+            <span class="featured-rewards__card-overlay"
+              >Earn 3X points on dining</span
+            >
+          </div>
+          <div class="featured-rewards__card-content">
+            <p class="featured-rewards__card-description">
+              Enjoy 3X points at restaurants worldwide. Dine, earn, and redeem
+              for your next adventure.
+            </p>
+            <a href="#" class="btn btn--outline">Learn more</a>
+          </div>
+        </div>
+
+        <!-- Card 4: Seasonal Shopping -->
+        <div class="featured-rewards__card">
+          <div class="featured-rewards__card-image">
+            <img
+              src="assets/images/MRM_SeasonsGreetings_Nov2024_C.webp"
+              alt="Seasonal Shopping"
+            />
+            <span class="featured-rewards__card-overlay"
+              >Holiday bonus points</span
+            >
+          </div>
+          <div class="featured-rewards__card-content">
+            <p class="featured-rewards__card-description">
+              Earn bonus points on holiday shopping at select retailers. Limited
+              time offer.
+            </p>
+            <a href="#" class="btn btn--outline">Shop now</a>
+          </div>
+        </div>
+
+        <!-- Card 5: Pay Yourself Back -->
+        <div class="featured-rewards__card">
+          <div class="featured-rewards__card-image">
+            <img
+              src="assets/images/MRM_Ways_to_Use_Feb2025_C.webp"
+              alt="Pay Yourself Back"
+            />
+            <span class="featured-rewards__card-overlay"
+              >Pay Yourself Back</span
+            >
+          </div>
+          <div class="featured-rewards__card-content">
+            <p class="featured-rewards__card-description">
+              Use your points to get statement credits on purchases you've
+              already made.
+            </p>
+            <a href="#" class="btn btn--outline">Get started</a>
+          </div>
+        </div>
+
+        <!-- Card 6: Partner Transfers -->
+        <div class="featured-rewards__card">
+          <div class="featured-rewards__card-image">
+            <img
+              src="assets/images/MRM_ChaseTravelOffer_2025_Wave2_C.webp"
+              alt="Partner Transfers"
+            />
+            <span class="featured-rewards__card-overlay"
+              >Transfer to travel partners</span
+            >
+          </div>
+          <div class="featured-rewards__card-content">
+            <p class="featured-rewards__card-description">
+              Transfer points 1:1 to leading airline and hotel loyalty programs
+              for maximum value.
+            </p>
+            <a href="#" class="btn btn--outline">View partners</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Arrow -->
+    <!-- HTL: data-sly-test="${model.showArrows}" -->
+    <button
+      class="featured-rewards__nav featured-rewards__nav--next"
+      aria-label="Next"
+      data-sly-test="${model.showArrows}"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Navigation Dots -->
+  <!-- HTL: data-sly-test="${model.showDots}" -->
+  <!-- HTL: Generate dots dynamically based on card count / cards per page -->
+  <div class="featured-rewards__dots" data-sly-test="${model.showDots}">
+    <button
+      class="featured-rewards__dot featured-rewards__dot--active"
+      aria-label="Go to slide 1"
+    ></button>
+    <button class="featured-rewards__dot" aria-label="Go to slide 2"></button>
+    <button class="featured-rewards__dot" aria-label="Go to slide 3"></button>
+  </div>
+</section>

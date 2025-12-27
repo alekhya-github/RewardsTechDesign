@@ -1,0 +1,254 @@
+<!--/*
+  AEM Component: Promo Cards
+  Component Path: /apps/chase/components/promo-cards
+  Resource Type: chase/components/promo-cards
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./promoCards (multifield) - List of promo cards (typically 2):
+      - ./cardImage (image) - Card image
+      - ./cardImageAlt (textfield) - Image alt text
+      - ./description (textarea) - Card description text
+      - ./links (multifield) - Action links:
+          - ./linkIcon (dropdown) - Icon type (hotel/flight/car/globe/shop/bag)
+          - ./linkText (textfield) - Link text
+          - ./linkUrl (pathfield) - Link destination
+  
+  Sling Model: chase.core.models.PromoCardsModel
+  
+  Layout Notes:
+  - Displays as a 2-column grid on desktop
+  - Each card has an image + description + action links
+  - Links have icons and chevron arrows
+*/-->
+
+<!-- Promo Cards Component -->
+<section
+  class="promo-cards"
+  data-sly-use.model="chase.core.models.PromoCardsModel"
+>
+  <!-- HTL: data-sly-list.card="${model.promoCards}" -->
+  <div class="promo-cards__grid">
+    <!-- Travel Promo Card -->
+    <div class="promo-cards__card">
+      <div class="promo-cards__image">
+        <!-- HTL: data-sly-attribute.src="${card.cardImage}" data-sly-attribute.alt="${card.cardImageAlt}" -->
+        <img
+          src="assets/images/MRM_Ways_to_Use_Feb2025_C.webp"
+          alt="Travel Promo"
+        />
+      </div>
+      <div class="promo-cards__content">
+        <!-- HTL: data-sly-text="${card.description}" -->
+        <p class="promo-cards__description">
+          Earn cash back on your next trip when you purchase through Chase
+          Travel.
+        </p>
+        <!-- Action Links -->
+        <!-- HTL: data-sly-list.link="${card.links}" -->
+        <ul class="promo-cards__links">
+          <!-- Link 1: Reserve a hotel -->
+          <li>
+            <a href="#">
+              <!-- Hotel Icon -->
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              <!-- HTL: data-sly-text="${link.linkText}" -->
+              Reserve a hotel
+            </a>
+            <!-- Chevron -->
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </li>
+
+          <!-- Link 2: Book a flight -->
+          <li>
+            <a href="#">
+              <!-- Flight Icon -->
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8"
+                />
+                <path d="M3.3 7l8.7 5 8.7-5" />
+              </svg>
+              Book a flight
+            </a>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </li>
+
+          <!-- Link 3: Rent a car -->
+          <li>
+            <a href="#">
+              <!-- Car Icon -->
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
+              Rent a car
+            </a>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Shopping Promo Card -->
+    <div class="promo-cards__card">
+      <div class="promo-cards__image">
+        <img
+          src="assets/images/MRM_SeasonsGreetings_Nov2024_C.webp"
+          alt="Shopping Promo"
+        />
+      </div>
+      <div class="promo-cards__content">
+        <p class="promo-cards__description">
+          Check out our top ways to shop top brands. Start earning points,
+          shopping with points and more today.
+        </p>
+        <ul class="promo-cards__links">
+          <!-- Link 1: Explore all ways to shop -->
+          <li>
+            <a href="#">
+              <!-- Globe Icon -->
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+              Explore all the ways to shop
+            </a>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </li>
+
+          <!-- Link 2: Visit The Shops at Chase -->
+          <li>
+            <a href="#">
+              <!-- Shop Icon -->
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+              </svg>
+              Visit The Shops at Chase
+            </a>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </li>
+
+          <!-- Link 3: Shop and earn bonus points -->
+          <li>
+            <a href="#">
+              <!-- Shopping Bag Icon -->
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+              Shop and earn bonus points
+            </a>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,95 @@
+<!--/*
+  AEM Component: Need Help
+  Component Path: /apps/chase/components/need-help
+  Resource Type: chase/components/need-help
+  
+  Dialog Fields (.content.xml):
+  ==================================
+  - ./sectionTitle (textfield) - Section title (Default: "Need help?")
+  - ./description (textarea) - Help description text
+  - ./helpLinks (multifield) - List of help links:
+      - ./linkText (textfield) - Link display text
+      - ./linkUrl (pathfield) - Link destination URL
+      - ./openInNewTab (checkbox) - Open link in new tab
+  
+  Sling Model: chase.core.models.NeedHelpModel
+  
+  Accessibility Notes:
+  - Links should have descriptive text
+  - Consider adding aria-label for external links
+*/-->
+
+<!-- Need Help Component -->
+<section class="need-help" data-sly-use.model="chase.core.models.NeedHelpModel">
+  <!-- Section Title - HTL: data-sly-text="${model.sectionTitle @ default='Need help?'}" -->
+  <h2
+    class="need-help__title"
+    data-sly-text="${model.sectionTitle @ default='Need help?'}"
+  >
+    Need help?
+  </h2>
+
+  <!-- Description - HTL: data-sly-text="${model.description}" -->
+  <p class="need-help__description" data-sly-text="${model.description}">
+    For questions about your rewards program or general account inquiries,
+    please call the number on the back of your card.
+  </p>
+
+  <!-- Help Links -->
+  <!-- HTL: data-sly-list.link="${model.helpLinks}" -->
+  <ul class="need-help__links">
+    <!-- Link 1: Provide feedback -->
+    <li>
+      <!-- HTL: data-sly-attribute.href="${link.linkUrl}" data-sly-attribute.target="${link.openInNewTab ? '_blank' : ''}" -->
+      <a href="#">
+        <!-- HTL: data-sly-text="${link.linkText}" -->
+        <span>Provide feedback</span>
+        <!-- Chevron Arrow -->
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+    </li>
+
+    <!-- Link 2: Ultimate Rewards FAQs -->
+    <li>
+      <a href="#">
+        <span>Ultimate Reward<span class="text-highlight">s</span> FAQs</span>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+    </li>
+
+    <!-- Link 3: Rewards Program Agreement -->
+    <li>
+      <a href="#">
+        <span>Rewards Program Agreement</span>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</section>
